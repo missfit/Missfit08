@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="progress-fab-1.6">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.android/build-cache/3b0e90132e5bf98f10823a1f3e8c8ddaac475ada/output/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.android/build-cache/3b0e90132e5bf98f10823a1f3e8c8ddaac475ada/output/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://C:/gradle-3.5-all/caches/modules-2/files-2.1/com.dmitrymalkovich.android/progress-fab/1.6/502792192db48eefebaf2a6070d3abf3eb3f5125/progress-fab-1.6-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

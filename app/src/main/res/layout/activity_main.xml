@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.bridou_n.beaconscanner.features.beaconList.MainActivity">
+
+    <com.dmitrymalkovich.android.ProgressFloatingActionButton
+        android:id="@+id/scan_fab_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center"
+        android:clickable="true">
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/scan_fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/keyline_16"
+            android:tint="@android:color/white"
+            android:src="@drawable/ic_sync_black_24dp"
+            app:fabSize="normal" />
+
+        <ProgressBar
+            android:visibility="invisible"
+            android:id="@+id/scan_progress"
+            android:layout_margin="@dimen/keyline_4"
+            android:indeterminateTint="@color/colorScanProgress"
+            android:indeterminateTintMode="src_in"
+            style="@style/Widget.AppCompat.ProgressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+    </com.dmitrymalkovich.android.ProgressFloatingActionButton>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            android:background="?attr/colorPrimary"
+            android:elevation="4dp"
+            android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+        <!-- Header with bluetooth state -->
+
+        <!-- Actual content -->
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/beacons_rv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/bluetooth_state"
+            android:scrollbars="vertical"
+            android:visibility="gone"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+        <!-- Empty view -->
+        <RelativeLayout
+            android:id="@+id/empty_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true">
+
+            <!--<ImageView-->
+                <!--android:id="@+id/error_image"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_centerHorizontal="true"-->
+                <!--android:src="@drawable/ic_track_changes_black_48dp"-->
+                <!--android:tint="@color/colorPrimary" />-->
+
+            <!--<TextView-->
+                <!--android:id="@+id/empty_state_title"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_below="@+id/error_image"-->
+                <!--android:layout_centerHorizontal="true"-->
+                <!--android:layout_margin="@dimen/keyline_16"-->
+                <!--android:text="@string/no_scanned_beacons_yet"-->
+                <!--android:textColor="@color/primaryText"-->
+                <!--android:textSize="16sp" />-->
+
+            <!--<TextView-->
+                <!--android:id="@+id/empty_state_content"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_below="@+id/empty_state_title"-->
+                <!--android:layout_centerHorizontal="true"-->
+                <!--android:layout_marginLeft="@dimen/keyline_32"-->
+                <!--android:layout_marginRight="@dimen/keyline_32"-->
+                <!--android:maxWidth="250dip"-->
+                <!--android:text="@string/empty_state_content"-->
+                <!--android:textAlignment="center"-->
+                <!--android:textSize="14sp" />-->
+
+        </RelativeLayout>
+
+        <!--ROOT-->
+        <LinearLayout
+            android:id="@+id/rootView"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:layout_below="@+id/toolbar"
+            android:layout_marginTop="40dp"
+            android:orientation="vertical">
+
+            <!--손-->
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="200dp">
+
+                <TextView
+                    android:id="@+id/textView1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:text="TextView" />
+
+                <TextView
+                    android:id="@+id/textView1_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignEnd="@+id/textView1"
+                    android:layout_above="@+id/textView1"
+                    android:text="TextView" />
+
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="TextView"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"/>
+
+                <TextView
+                    android:id="@+id/textView2_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TextView"
+                android:layout_alignParentEnd="true"
+                android:layout_above="@id/textView2"/>
+
+
+                <LinearLayout
+                android:id="@+id/handView"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_weight="1">
+
+
+                <ImageView
+                    android:id="@+id/leftHand"
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:layout_weight="1"
+                    android:layout_below="@+id/textView1_1"
+                    app:srcCompat="@drawable/lh11" />
+
+                <ImageView
+                    android:id="@+id/rightHand"
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:layout_weight="1"
+                    android:layout_below="@+id/textView2_1"
+                    android:layout_toEndOf="@+id/leftFoot"
+                    app:srcCompat="@drawable/rh11" />
+
+
+            </LinearLayout>
+
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="200dp">
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:text="TextView" />
+
+                <TextView
+                    android:id="@+id/textView3_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/textView3"
+                    android:layout_alignEnd="@+id/textView3"
+                    android:text="TextView" />
+
+            <LinearLayout
+                android:id="@+id/footView"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_weight="1"
+                >
+
+                <ImageView
+                    android:id="@+id/leftFoot"
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:layout_weight="1"
+                    android:layout_alignParentStart="true"
+                    android:layout_below="@+id/leftHand"
+
+                    app:srcCompat="@drawable/lf111" />
+
+                <ImageView
+                    android:id="@+id/rightFoot"
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:layout_weight="1"
+                    android:layout_below="@+id/rightHand"
+                    android:layout_toEndOf="@+id/leftHand"
+                    app:srcCompat="@drawable/rf111" />
+
+            </LinearLayout>
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:text="TextView" />
+
+                <TextView
+                    android:id="@+id/textView4_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_above="@+id/textView4"
+                    android:text="TextView" />
+
+
+            </RelativeLayout>
+        </LinearLayout>
+
+
+
+
+
+
+
+        <!--
+        <ImageView
+            android:id="@+id/lh2"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_below="@+id/textView1_1"
+            app:srcCompat="@drawable/lh2" />
+
+        <ImageView
+            android:id="@+id/lh3"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_below="@+id/textView1_1"
+            app:srcCompat="@drawable/lh3" />
+
+        <ImageView
+            android:id="@+id/lh4"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_below="@+id/textView1_1"
+            app:srcCompat="@drawable/lh4" />
+-->
+
+        <TextView
+            android:id="@+id/bluetooth_state"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/keyline_48"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/toolbar"
+            android:background="@color/bluetoothDisabledLight"
+            android:elevation="@dimen/keyline_4"
+            android:gravity="center_vertical"
+            android:paddingEnd="@dimen/keyline_16"
+            android:paddingStart="@dimen/keyline_16"
+            android:textColor="@color/bluetoothDisabled"
+            android:textSize="16sp"
+            tools:text="Bluetooth disabled" />
+
+
+
+
+    </RelativeLayout>
+
+</android.support.design.widget.CoordinatorLayout>
