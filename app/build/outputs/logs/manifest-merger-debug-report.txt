@@ -1,180 +1,180 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\android0812\app\src\main\AndroidManifest.xml:2:1-36:12
+ADDED from C:\Users\JiHyeon\Desktop\Missfit08\app\src\main\AndroidManifest.xml:2:1-36:12
 	package
-		ADDED from C:\android0812\app\src\main\AndroidManifest.xml:3:5-41
-		INJECTED from C:\android0812\app\src\main\AndroidManifest.xml
-		INJECTED from C:\android0812\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\JiHyeon\Desktop\Missfit08\app\src\main\AndroidManifest.xml:3:5-41
+		INJECTED from C:\Users\JiHyeon\Desktop\Missfit08\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\JiHyeon\Desktop\Missfit08\app\src\main\AndroidManifest.xml
 	android:versionName
-		INJECTED from C:\android0812\app\src\main\AndroidManifest.xml
-		INJECTED from C:\android0812\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\JiHyeon\Desktop\Missfit08\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\JiHyeon\Desktop\Missfit08\app\src\main\AndroidManifest.xml
 	xmlns:android
-		ADDED from C:\android0812\app\src\main\AndroidManifest.xml:2:11-69
+		ADDED from C:\Users\JiHyeon\Desktop\Missfit08\app\src\main\AndroidManifest.xml:2:11-69
 	android:versionCode
-		INJECTED from C:\android0812\app\src\main\AndroidManifest.xml
-		INJECTED from C:\android0812\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\JiHyeon\Desktop\Missfit08\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\JiHyeon\Desktop\Missfit08\app\src\main\AndroidManifest.xml
 uses-permission#android.permission.BLUETOOTH
-ADDED from C:\android0812\app\src\main\AndroidManifest.xml:5:5-68
-MERGED from [org.altbeacon:android-beacon-library:2.9.1] C:\Users\eunju\.android\build-cache\a5c9a2198e5a3a592c5b37279429e0280ef539e7\output\AndroidManifest.xml:11:5-68
+ADDED from C:\Users\JiHyeon\Desktop\Missfit08\app\src\main\AndroidManifest.xml:5:5-68
+MERGED from [org.altbeacon:android-beacon-library:2.9.1] C:\Users\JiHyeon\.android\build-cache\5705292b1e3be5111e94af4558e452cb0ebc33da\output\AndroidManifest.xml:11:5-68
 	android:name
-		ADDED from C:\android0812\app\src\main\AndroidManifest.xml:5:22-65
+		ADDED from C:\Users\JiHyeon\Desktop\Missfit08\app\src\main\AndroidManifest.xml:5:22-65
 uses-permission#android.permission.BLUETOOTH_ADMIN
-ADDED from C:\android0812\app\src\main\AndroidManifest.xml:6:5-74
-MERGED from [org.altbeacon:android-beacon-library:2.9.1] C:\Users\eunju\.android\build-cache\a5c9a2198e5a3a592c5b37279429e0280ef539e7\output\AndroidManifest.xml:12:5-74
+ADDED from C:\Users\JiHyeon\Desktop\Missfit08\app\src\main\AndroidManifest.xml:6:5-74
+MERGED from [org.altbeacon:android-beacon-library:2.9.1] C:\Users\JiHyeon\.android\build-cache\5705292b1e3be5111e94af4558e452cb0ebc33da\output\AndroidManifest.xml:12:5-74
 	android:name
-		ADDED from C:\android0812\app\src\main\AndroidManifest.xml:6:22-71
+		ADDED from C:\Users\JiHyeon\Desktop\Missfit08\app\src\main\AndroidManifest.xml:6:22-71
 uses-permission#android.permission.ACCESS_COARSE_LOCATION
-ADDED from C:\android0812\app\src\main\AndroidManifest.xml:7:5-81
+ADDED from C:\Users\JiHyeon\Desktop\Missfit08\app\src\main\AndroidManifest.xml:7:5-81
 	android:name
-		ADDED from C:\android0812\app\src\main\AndroidManifest.xml:7:22-78
+		ADDED from C:\Users\JiHyeon\Desktop\Missfit08\app\src\main\AndroidManifest.xml:7:22-78
 uses-permission#android.permission.INTERNET
-ADDED from C:\android0812\app\src\main\AndroidManifest.xml:8:5-67
+ADDED from C:\Users\JiHyeon\Desktop\Missfit08\app\src\main\AndroidManifest.xml:8:5-67
 	android:name
-		ADDED from C:\android0812\app\src\main\AndroidManifest.xml:8:22-64
+		ADDED from C:\Users\JiHyeon\Desktop\Missfit08\app\src\main\AndroidManifest.xml:8:22-64
 uses-feature#android.hardware.bluetooth_le
-ADDED from C:\android0812\app\src\main\AndroidManifest.xml:10:5-12:35
+ADDED from C:\Users\JiHyeon\Desktop\Missfit08\app\src\main\AndroidManifest.xml:10:5-12:35
 	android:required
-		ADDED from C:\android0812\app\src\main\AndroidManifest.xml:12:9-32
+		ADDED from C:\Users\JiHyeon\Desktop\Missfit08\app\src\main\AndroidManifest.xml:12:9-32
 	android:name
-		ADDED from C:\android0812\app\src\main\AndroidManifest.xml:11:9-53
+		ADDED from C:\Users\JiHyeon\Desktop\Missfit08\app\src\main\AndroidManifest.xml:11:9-53
 application
-ADDED from C:\android0812\app\src\main\AndroidManifest.xml:14:5-34:19
-MERGED from [com.android.support:cardview-v7:24.2.1] C:\Users\eunju\.android\build-cache\949e521f99c24403b216e202fd69240e0aaa264f\output\AndroidManifest.xml:22:5-20
-MERGED from [org.altbeacon:android-beacon-library:2.9.1] C:\Users\eunju\.android\build-cache\a5c9a2198e5a3a592c5b37279429e0280ef539e7\output\AndroidManifest.xml:17:5-36:19
-MERGED from [pub.devrel:easypermissions:0.2.0] C:\Users\eunju\.android\build-cache\c9104eb730ca8dd1c667900b6561499a8e47d534\output\AndroidManifest.xml:12:5-20
-MERGED from [com.dmitrymalkovich.android:progress-fab:1.6] C:\Users\eunju\.android\build-cache\3b0e90132e5bf98f10823a1f3e8c8ddaac475ada\output\AndroidManifest.xml:11:5-13:44
-MERGED from [com.android.support:design:24.2.1] C:\Users\eunju\.android\build-cache\3f439c19c264f024097a8f9c4c14eb3b2cc31f70\output\AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:appcompat-v7:24.2.1] C:\Users\eunju\.android\build-cache\1c6d8b0653368fc0503aecb64305e7618bc815ee\output\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-v4:24.2.1] C:\Users\eunju\.android\build-cache\1518a8fa42233cdc6fc1be845e85dcfb96415f8f\output\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-fragment:24.2.1] C:\Users\eunju\.android\build-cache\61e0797ef288d562d9aa42f6ea340c74e602f566\output\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-media-compat:24.2.1] C:\Users\eunju\.android\build-cache\6c9085c77d80d7216ca0b314f86be47b8455b7c4\output\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-core-ui:24.2.1] C:\Users\eunju\.android\build-cache\a8e06bc5857e143fc1386809c51be0a862572f6e\output\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-core-utils:24.2.1] C:\Users\eunju\.android\build-cache\d47e3c27efee82f419303870eca2f91135d5ed63\output\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:animated-vector-drawable:24.2.1] C:\Users\eunju\.android\build-cache\f423483697d5c2aca0dcb9865547baf4ce19ef2d\output\AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:support-vector-drawable:24.2.1] C:\Users\eunju\.android\build-cache\d401c5040f3b5ce236020e0586335450973d6603\output\AndroidManifest.xml:23:5-20
-MERGED from [com.android.support:support-compat:24.2.1] C:\Users\eunju\.android\build-cache\d00edc6e1cfae9b661bf8f6f57bbb458a51916d0\output\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\eunju\.android\build-cache\48fca4066a0997ac5634e7a385c26b2114fe3f1c\output\AndroidManifest.xml:9:5-20
+ADDED from C:\Users\JiHyeon\Desktop\Missfit08\app\src\main\AndroidManifest.xml:14:5-34:19
+MERGED from [com.android.support:cardview-v7:24.2.1] C:\Users\JiHyeon\.android\build-cache\716bc48467d64023f931776c387307ad8c2bee78\output\AndroidManifest.xml:22:5-20
+MERGED from [org.altbeacon:android-beacon-library:2.9.1] C:\Users\JiHyeon\.android\build-cache\5705292b1e3be5111e94af4558e452cb0ebc33da\output\AndroidManifest.xml:17:5-36:19
+MERGED from [pub.devrel:easypermissions:0.2.0] C:\Users\JiHyeon\.android\build-cache\427422b304db5355686c27ae4dafb8f0e617a34c\output\AndroidManifest.xml:12:5-20
+MERGED from [com.dmitrymalkovich.android:progress-fab:1.6] C:\Users\JiHyeon\.android\build-cache\fb0fb8dc92af706b827430053da56ab41e021da9\output\AndroidManifest.xml:11:5-13:44
+MERGED from [com.android.support:design:24.2.1] C:\Users\JiHyeon\.android\build-cache\7e18ec442322497095d14dc0ff2c551aed4c2548\output\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:appcompat-v7:24.2.1] C:\Users\JiHyeon\.android\build-cache\46e7b7d22413892efeb0609ee704dccd52154ae0\output\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-v4:24.2.1] C:\Users\JiHyeon\.android\build-cache\e76c174647523b706d42778c2f18ffd7b426c9ee\output\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-fragment:24.2.1] C:\Users\JiHyeon\.android\build-cache\81fbcb432afa825084a614bea760c3c9a1412443\output\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-media-compat:24.2.1] C:\Users\JiHyeon\.android\build-cache\35b5596ecb232808492cfc4c4c8fd4082a06637d\output\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-core-ui:24.2.1] C:\Users\JiHyeon\.android\build-cache\2938c8896673479b2078fd2a1160ca077ecdb0c4\output\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-core-utils:24.2.1] C:\Users\JiHyeon\.android\build-cache\6f1c60b528807e803c958f325de190e510ccca89\output\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:animated-vector-drawable:24.2.1] C:\Users\JiHyeon\.android\build-cache\5cdbcd4b3e0eb572c020da3b9b150de5c96274d7\output\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-vector-drawable:24.2.1] C:\Users\JiHyeon\.android\build-cache\abfb2da2aa4ae39f0b91527b1fae7bcbbcb6dbdc\output\AndroidManifest.xml:23:5-20
+MERGED from [com.android.support:support-compat:24.2.1] C:\Users\JiHyeon\.android\build-cache\514d8b4c0d6ea1eed22316048c6d4db9035732d0\output\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\JiHyeon\.android\build-cache\500d9e8805407d81b6fa2277b3d64fe53e18cd0d\output\AndroidManifest.xml:9:5-20
 	android:label
-		ADDED from C:\android0812\app\src\main\AndroidManifest.xml:18:9-41
+		ADDED from C:\Users\JiHyeon\Desktop\Missfit08\app\src\main\AndroidManifest.xml:18:9-41
 	android:supportsRtl
-		ADDED from C:\android0812\app\src\main\AndroidManifest.xml:19:9-35
+		ADDED from C:\Users\JiHyeon\Desktop\Missfit08\app\src\main\AndroidManifest.xml:19:9-35
 	android:allowBackup
-		ADDED from C:\android0812\app\src\main\AndroidManifest.xml:16:9-35
+		ADDED from C:\Users\JiHyeon\Desktop\Missfit08\app\src\main\AndroidManifest.xml:16:9-35
 	android:icon
-		ADDED from C:\android0812\app\src\main\AndroidManifest.xml:17:9-43
+		ADDED from C:\Users\JiHyeon\Desktop\Missfit08\app\src\main\AndroidManifest.xml:17:9-43
 	android:theme
-		ADDED from C:\android0812\app\src\main\AndroidManifest.xml:20:9-40
+		ADDED from C:\Users\JiHyeon\Desktop\Missfit08\app\src\main\AndroidManifest.xml:20:9-40
 	android:name
-		ADDED from C:\android0812\app\src\main\AndroidManifest.xml:15:9-37
+		ADDED from C:\Users\JiHyeon\Desktop\Missfit08\app\src\main\AndroidManifest.xml:15:9-37
 activity#com.bridou_n.beaconscanner.features.beaconList.IntroActivity
-ADDED from C:\android0812\app\src\main\AndroidManifest.xml:22:9-28:20
+ADDED from C:\Users\JiHyeon\Desktop\Missfit08\app\src\main\AndroidManifest.xml:22:9-28:20
 	android:name
-		ADDED from C:\android0812\app\src\main\AndroidManifest.xml:22:19-68
+		ADDED from C:\Users\JiHyeon\Desktop\Missfit08\app\src\main\AndroidManifest.xml:22:19-68
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from C:\android0812\app\src\main\AndroidManifest.xml:23:13-27:29
+ADDED from C:\Users\JiHyeon\Desktop\Missfit08\app\src\main\AndroidManifest.xml:23:13-27:29
 action#android.intent.action.MAIN
-ADDED from C:\android0812\app\src\main\AndroidManifest.xml:24:17-69
+ADDED from C:\Users\JiHyeon\Desktop\Missfit08\app\src\main\AndroidManifest.xml:24:17-69
 	android:name
-		ADDED from C:\android0812\app\src\main\AndroidManifest.xml:24:25-66
+		ADDED from C:\Users\JiHyeon\Desktop\Missfit08\app\src\main\AndroidManifest.xml:24:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\android0812\app\src\main\AndroidManifest.xml:26:17-77
+ADDED from C:\Users\JiHyeon\Desktop\Missfit08\app\src\main\AndroidManifest.xml:26:17-77
 	android:name
-		ADDED from C:\android0812\app\src\main\AndroidManifest.xml:26:27-74
+		ADDED from C:\Users\JiHyeon\Desktop\Missfit08\app\src\main\AndroidManifest.xml:26:27-74
 activity#com.bridou_n.beaconscanner.features.beaconList.MainActivity
-ADDED from C:\android0812\app\src\main\AndroidManifest.xml:29:9-70
+ADDED from C:\Users\JiHyeon\Desktop\Missfit08\app\src\main\AndroidManifest.xml:29:9-70
 	android:name
-		ADDED from C:\android0812\app\src\main\AndroidManifest.xml:29:19-67
+		ADDED from C:\Users\JiHyeon\Desktop\Missfit08\app\src\main\AndroidManifest.xml:29:19-67
 activity#com.bridou_n.beaconscanner.features.beaconList.choice
-ADDED from C:\android0812\app\src\main\AndroidManifest.xml:30:9-64
+ADDED from C:\Users\JiHyeon\Desktop\Missfit08\app\src\main\AndroidManifest.xml:30:9-64
 	android:name
-		ADDED from C:\android0812\app\src\main\AndroidManifest.xml:30:19-61
+		ADDED from C:\Users\JiHyeon\Desktop\Missfit08\app\src\main\AndroidManifest.xml:30:19-61
 activity#com.bridou_n.beaconscanner.features.beaconList.squatvideo
-ADDED from C:\android0812\app\src\main\AndroidManifest.xml:31:9-68
+ADDED from C:\Users\JiHyeon\Desktop\Missfit08\app\src\main\AndroidManifest.xml:31:9-68
 	android:name
-		ADDED from C:\android0812\app\src\main\AndroidManifest.xml:31:19-65
+		ADDED from C:\Users\JiHyeon\Desktop\Missfit08\app\src\main\AndroidManifest.xml:31:19-65
 activity#com.bridou_n.beaconscanner.features.beaconList.lungevideo
-ADDED from C:\android0812\app\src\main\AndroidManifest.xml:32:9-68
+ADDED from C:\Users\JiHyeon\Desktop\Missfit08\app\src\main\AndroidManifest.xml:32:9-68
 	android:name
-		ADDED from C:\android0812\app\src\main\AndroidManifest.xml:32:19-65
+		ADDED from C:\Users\JiHyeon\Desktop\Missfit08\app\src\main\AndroidManifest.xml:32:19-65
 activity#com.bridou_n.beaconscanner.features.beaconList.ropevideo
-ADDED from C:\android0812\app\src\main\AndroidManifest.xml:33:9-76
+ADDED from C:\Users\JiHyeon\Desktop\Missfit08\app\src\main\AndroidManifest.xml:33:9-76
 	android:name
-		ADDED from C:\android0812\app\src\main\AndroidManifest.xml:33:19-64
+		ADDED from C:\Users\JiHyeon\Desktop\Missfit08\app\src\main\AndroidManifest.xml:33:19-64
 uses-sdk
-INJECTED from C:\android0812\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
-MERGED from [com.android.support:cardview-v7:24.2.1] C:\Users\eunju\.android\build-cache\949e521f99c24403b216e202fd69240e0aaa264f\output\AndroidManifest.xml:20:5-43
-MERGED from [com.jakewharton:butterknife:8.4.0] C:\Users\eunju\.android\build-cache\4858897dc578b91e382f4a20fb0999ad6eae3351\output\AndroidManifest.xml:5:5-43
-MERGED from [io.reactivex:rxandroid:1.2.1] C:\Users\eunju\.android\build-cache\bf42fa0a5011df42bc2204f7e8a3e72fb09b6565\output\AndroidManifest.xml:19:5-43
-MERGED from [io.realm:android-adapters:1.3.0] C:\Users\eunju\.android\build-cache\0499e7afd5981b838115bed69732505f1cc1e831\output\AndroidManifest.xml:6:5-8:41
-MERGED from [io.realm:realm-android-library:2.0.1] C:\Users\eunju\.android\build-cache\8398ab918b173a6f2d2a02111b5ba2174d9c3f5d\output\AndroidManifest.xml:5:5-7:41
-MERGED from [com.getkeepsafe.relinker:relinker:1.2.2] C:\Users\eunju\.android\build-cache\8dfa8bff2bb29a2b08baa70d494f6cd20b17dc33\output\AndroidManifest.xml:7:5-43
-MERGED from [org.altbeacon:android-beacon-library:2.9.1] C:\Users\eunju\.android\build-cache\a5c9a2198e5a3a592c5b37279429e0280ef539e7\output\AndroidManifest.xml:7:5-9:41
-MERGED from [pub.devrel:easypermissions:0.2.0] C:\Users\eunju\.android\build-cache\c9104eb730ca8dd1c667900b6561499a8e47d534\output\AndroidManifest.xml:8:5-10:41
-MERGED from [com.dmitrymalkovich.android:progress-fab:1.6] C:\Users\eunju\.android\build-cache\3b0e90132e5bf98f10823a1f3e8c8ddaac475ada\output\AndroidManifest.xml:7:5-9:41
-MERGED from [com.android.support:design:24.2.1] C:\Users\eunju\.android\build-cache\3f439c19c264f024097a8f9c4c14eb3b2cc31f70\output\AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:recyclerview-v7:24.2.1] C:\Users\eunju\.android\build-cache\1af3c2b00268065075bc4a2c6c09ee956f579242\output\AndroidManifest.xml:20:5-43
-MERGED from [com.getkeepsafe.taptargetview:taptargetview:1.3.0] C:\Users\eunju\.android\build-cache\cea31e795e350d82519b2d993dadf4b88d19c5b7\output\AndroidManifest.xml:8:5-44
-MERGED from [com.android.support:appcompat-v7:24.2.1] C:\Users\eunju\.android\build-cache\1c6d8b0653368fc0503aecb64305e7618bc815ee\output\AndroidManifest.xml:21:5-23:78
-MERGED from [com.android.support:support-v4:24.2.1] C:\Users\eunju\.android\build-cache\1518a8fa42233cdc6fc1be845e85dcfb96415f8f\output\AndroidManifest.xml:21:5-23:54
-MERGED from [com.android.support:support-fragment:24.2.1] C:\Users\eunju\.android\build-cache\61e0797ef288d562d9aa42f6ea340c74e602f566\output\AndroidManifest.xml:21:5-23:60
-MERGED from [com.android.support:support-media-compat:24.2.1] C:\Users\eunju\.android\build-cache\6c9085c77d80d7216ca0b314f86be47b8455b7c4\output\AndroidManifest.xml:21:5-23:63
-MERGED from [com.android.support:support-core-ui:24.2.1] C:\Users\eunju\.android\build-cache\a8e06bc5857e143fc1386809c51be0a862572f6e\output\AndroidManifest.xml:21:5-23:58
-MERGED from [com.android.support:support-core-utils:24.2.1] C:\Users\eunju\.android\build-cache\d47e3c27efee82f419303870eca2f91135d5ed63\output\AndroidManifest.xml:21:5-23:61
-MERGED from [com.android.support:animated-vector-drawable:24.2.1] C:\Users\eunju\.android\build-cache\f423483697d5c2aca0dcb9865547baf4ce19ef2d\output\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:24.2.1] C:\Users\eunju\.android\build-cache\d401c5040f3b5ce236020e0586335450973d6603\output\AndroidManifest.xml:21:5-43
-MERGED from [com.android.support:support-compat:24.2.1] C:\Users\eunju\.android\build-cache\d00edc6e1cfae9b661bf8f6f57bbb458a51916d0\output\AndroidManifest.xml:21:5-23:58
-MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\eunju\.android\build-cache\48fca4066a0997ac5634e7a385c26b2114fe3f1c\output\AndroidManifest.xml:5:5-7:41
+INJECTED from C:\Users\JiHyeon\Desktop\Missfit08\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+MERGED from [com.android.support:cardview-v7:24.2.1] C:\Users\JiHyeon\.android\build-cache\716bc48467d64023f931776c387307ad8c2bee78\output\AndroidManifest.xml:20:5-43
+MERGED from [com.jakewharton:butterknife:8.4.0] C:\Users\JiHyeon\.android\build-cache\39b5b719fc6a3edc2e7b3f64bbd9a956c41b8fd8\output\AndroidManifest.xml:5:5-43
+MERGED from [io.reactivex:rxandroid:1.2.1] C:\Users\JiHyeon\.android\build-cache\20be44487d5cc6c309cee0cb689fe5a1a9ac5952\output\AndroidManifest.xml:19:5-43
+MERGED from [io.realm:android-adapters:1.3.0] C:\Users\JiHyeon\.android\build-cache\58c0adc8db85f691b10ffa8b0b6787ebe8bf6970\output\AndroidManifest.xml:6:5-8:41
+MERGED from [io.realm:realm-android-library:2.0.1] C:\Users\JiHyeon\.android\build-cache\2b511bb9ead46b4ea47920c00e9f444628495a61\output\AndroidManifest.xml:5:5-7:41
+MERGED from [com.getkeepsafe.relinker:relinker:1.2.2] C:\Users\JiHyeon\.android\build-cache\620b15d19ae3929d140060029128eed053ccbccb\output\AndroidManifest.xml:7:5-43
+MERGED from [org.altbeacon:android-beacon-library:2.9.1] C:\Users\JiHyeon\.android\build-cache\5705292b1e3be5111e94af4558e452cb0ebc33da\output\AndroidManifest.xml:7:5-9:41
+MERGED from [pub.devrel:easypermissions:0.2.0] C:\Users\JiHyeon\.android\build-cache\427422b304db5355686c27ae4dafb8f0e617a34c\output\AndroidManifest.xml:8:5-10:41
+MERGED from [com.dmitrymalkovich.android:progress-fab:1.6] C:\Users\JiHyeon\.android\build-cache\fb0fb8dc92af706b827430053da56ab41e021da9\output\AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:design:24.2.1] C:\Users\JiHyeon\.android\build-cache\7e18ec442322497095d14dc0ff2c551aed4c2548\output\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:recyclerview-v7:24.2.1] C:\Users\JiHyeon\.android\build-cache\3242eaa3fa97f4a544df14b945af99a90d478f98\output\AndroidManifest.xml:20:5-43
+MERGED from [com.getkeepsafe.taptargetview:taptargetview:1.3.0] C:\Users\JiHyeon\.android\build-cache\46e8095df56a5840ce483ffbb3537caaf030f7ac\output\AndroidManifest.xml:8:5-44
+MERGED from [com.android.support:appcompat-v7:24.2.1] C:\Users\JiHyeon\.android\build-cache\46e7b7d22413892efeb0609ee704dccd52154ae0\output\AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:support-v4:24.2.1] C:\Users\JiHyeon\.android\build-cache\e76c174647523b706d42778c2f18ffd7b426c9ee\output\AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-fragment:24.2.1] C:\Users\JiHyeon\.android\build-cache\81fbcb432afa825084a614bea760c3c9a1412443\output\AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-media-compat:24.2.1] C:\Users\JiHyeon\.android\build-cache\35b5596ecb232808492cfc4c4c8fd4082a06637d\output\AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-core-ui:24.2.1] C:\Users\JiHyeon\.android\build-cache\2938c8896673479b2078fd2a1160ca077ecdb0c4\output\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-core-utils:24.2.1] C:\Users\JiHyeon\.android\build-cache\6f1c60b528807e803c958f325de190e510ccca89\output\AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:animated-vector-drawable:24.2.1] C:\Users\JiHyeon\.android\build-cache\5cdbcd4b3e0eb572c020da3b9b150de5c96274d7\output\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:24.2.1] C:\Users\JiHyeon\.android\build-cache\abfb2da2aa4ae39f0b91527b1fae7bcbbcb6dbdc\output\AndroidManifest.xml:21:5-43
+MERGED from [com.android.support:support-compat:24.2.1] C:\Users\JiHyeon\.android\build-cache\514d8b4c0d6ea1eed22316048c6d4db9035732d0\output\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\JiHyeon\.android\build-cache\500d9e8805407d81b6fa2277b3d64fe53e18cd0d\output\AndroidManifest.xml:5:5-7:41
 	tools:overrideLibrary
-		ADDED from [com.android.support:appcompat-v7:24.2.1] C:\Users\eunju\.android\build-cache\1c6d8b0653368fc0503aecb64305e7618bc815ee\output\AndroidManifest.xml:23:9-75
+		ADDED from [com.android.support:appcompat-v7:24.2.1] C:\Users\JiHyeon\.android\build-cache\46e7b7d22413892efeb0609ee704dccd52154ae0\output\AndroidManifest.xml:23:9-75
 	android:targetSdkVersion
-		INJECTED from C:\android0812\app\src\main\AndroidManifest.xml
-		INJECTED from C:\android0812\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\JiHyeon\Desktop\Missfit08\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\JiHyeon\Desktop\Missfit08\app\src\main\AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from C:\android0812\app\src\main\AndroidManifest.xml
-		INJECTED from C:\android0812\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\JiHyeon\Desktop\Missfit08\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\JiHyeon\Desktop\Missfit08\app\src\main\AndroidManifest.xml
 uses-permission#android.permission.RECEIVE_BOOT_COMPLETED
-ADDED from [org.altbeacon:android-beacon-library:2.9.1] C:\Users\eunju\.android\build-cache\a5c9a2198e5a3a592c5b37279429e0280ef539e7\output\AndroidManifest.xml:13:5-81
+ADDED from [org.altbeacon:android-beacon-library:2.9.1] C:\Users\JiHyeon\.android\build-cache\5705292b1e3be5111e94af4558e452cb0ebc33da\output\AndroidManifest.xml:13:5-81
 	android:name
-		ADDED from [org.altbeacon:android-beacon-library:2.9.1] C:\Users\eunju\.android\build-cache\a5c9a2198e5a3a592c5b37279429e0280ef539e7\output\AndroidManifest.xml:13:22-78
+		ADDED from [org.altbeacon:android-beacon-library:2.9.1] C:\Users\JiHyeon\.android\build-cache\5705292b1e3be5111e94af4558e452cb0ebc33da\output\AndroidManifest.xml:13:22-78
 uses-permission-sdk-23
-ADDED from [org.altbeacon:android-beacon-library:2.9.1] C:\Users\eunju\.android\build-cache\a5c9a2198e5a3a592c5b37279429e0280ef539e7\output\AndroidManifest.xml:15:5-88
+ADDED from [org.altbeacon:android-beacon-library:2.9.1] C:\Users\JiHyeon\.android\build-cache\5705292b1e3be5111e94af4558e452cb0ebc33da\output\AndroidManifest.xml:15:5-88
 	android:name
-		ADDED from [org.altbeacon:android-beacon-library:2.9.1] C:\Users\eunju\.android\build-cache\a5c9a2198e5a3a592c5b37279429e0280ef539e7\output\AndroidManifest.xml:15:29-85
+		ADDED from [org.altbeacon:android-beacon-library:2.9.1] C:\Users\JiHyeon\.android\build-cache\5705292b1e3be5111e94af4558e452cb0ebc33da\output\AndroidManifest.xml:15:29-85
 receiver#org.altbeacon.beacon.startup.StartupBroadcastReceiver
-ADDED from [org.altbeacon:android-beacon-library:2.9.1] C:\Users\eunju\.android\build-cache\a5c9a2198e5a3a592c5b37279429e0280ef539e7\output\AndroidManifest.xml:18:9-24:20
+ADDED from [org.altbeacon:android-beacon-library:2.9.1] C:\Users\JiHyeon\.android\build-cache\5705292b1e3be5111e94af4558e452cb0ebc33da\output\AndroidManifest.xml:18:9-24:20
 	android:name
-		ADDED from [org.altbeacon:android-beacon-library:2.9.1] C:\Users\eunju\.android\build-cache\a5c9a2198e5a3a592c5b37279429e0280ef539e7\output\AndroidManifest.xml:18:19-87
+		ADDED from [org.altbeacon:android-beacon-library:2.9.1] C:\Users\JiHyeon\.android\build-cache\5705292b1e3be5111e94af4558e452cb0ebc33da\output\AndroidManifest.xml:18:19-87
 intent-filter#android.intent.action.ACTION_POWER_CONNECTED+android.intent.action.ACTION_POWER_DISCONNECTED+android.intent.action.BOOT_COMPLETED
-ADDED from [org.altbeacon:android-beacon-library:2.9.1] C:\Users\eunju\.android\build-cache\a5c9a2198e5a3a592c5b37279429e0280ef539e7\output\AndroidManifest.xml:19:13-23:29
+ADDED from [org.altbeacon:android-beacon-library:2.9.1] C:\Users\JiHyeon\.android\build-cache\5705292b1e3be5111e94af4558e452cb0ebc33da\output\AndroidManifest.xml:19:13-23:29
 action#android.intent.action.BOOT_COMPLETED
-ADDED from [org.altbeacon:android-beacon-library:2.9.1] C:\Users\eunju\.android\build-cache\a5c9a2198e5a3a592c5b37279429e0280ef539e7\output\AndroidManifest.xml:20:17-79
+ADDED from [org.altbeacon:android-beacon-library:2.9.1] C:\Users\JiHyeon\.android\build-cache\5705292b1e3be5111e94af4558e452cb0ebc33da\output\AndroidManifest.xml:20:17-79
 	android:name
-		ADDED from [org.altbeacon:android-beacon-library:2.9.1] C:\Users\eunju\.android\build-cache\a5c9a2198e5a3a592c5b37279429e0280ef539e7\output\AndroidManifest.xml:20:25-76
+		ADDED from [org.altbeacon:android-beacon-library:2.9.1] C:\Users\JiHyeon\.android\build-cache\5705292b1e3be5111e94af4558e452cb0ebc33da\output\AndroidManifest.xml:20:25-76
 action#android.intent.action.ACTION_POWER_CONNECTED
-ADDED from [org.altbeacon:android-beacon-library:2.9.1] C:\Users\eunju\.android\build-cache\a5c9a2198e5a3a592c5b37279429e0280ef539e7\output\AndroidManifest.xml:21:17-87
+ADDED from [org.altbeacon:android-beacon-library:2.9.1] C:\Users\JiHyeon\.android\build-cache\5705292b1e3be5111e94af4558e452cb0ebc33da\output\AndroidManifest.xml:21:17-87
 	android:name
-		ADDED from [org.altbeacon:android-beacon-library:2.9.1] C:\Users\eunju\.android\build-cache\a5c9a2198e5a3a592c5b37279429e0280ef539e7\output\AndroidManifest.xml:21:25-84
+		ADDED from [org.altbeacon:android-beacon-library:2.9.1] C:\Users\JiHyeon\.android\build-cache\5705292b1e3be5111e94af4558e452cb0ebc33da\output\AndroidManifest.xml:21:25-84
 action#android.intent.action.ACTION_POWER_DISCONNECTED
-ADDED from [org.altbeacon:android-beacon-library:2.9.1] C:\Users\eunju\.android\build-cache\a5c9a2198e5a3a592c5b37279429e0280ef539e7\output\AndroidManifest.xml:22:17-90
+ADDED from [org.altbeacon:android-beacon-library:2.9.1] C:\Users\JiHyeon\.android\build-cache\5705292b1e3be5111e94af4558e452cb0ebc33da\output\AndroidManifest.xml:22:17-90
 	android:name
-		ADDED from [org.altbeacon:android-beacon-library:2.9.1] C:\Users\eunju\.android\build-cache\a5c9a2198e5a3a592c5b37279429e0280ef539e7\output\AndroidManifest.xml:22:25-87
+		ADDED from [org.altbeacon:android-beacon-library:2.9.1] C:\Users\JiHyeon\.android\build-cache\5705292b1e3be5111e94af4558e452cb0ebc33da\output\AndroidManifest.xml:22:25-87
 service#org.altbeacon.beacon.service.BeaconService
-ADDED from [org.altbeacon:android-beacon-library:2.9.1] C:\Users\eunju\.android\build-cache\a5c9a2198e5a3a592c5b37279429e0280ef539e7\output\AndroidManifest.xml:26:9-31:38
+ADDED from [org.altbeacon:android-beacon-library:2.9.1] C:\Users\JiHyeon\.android\build-cache\5705292b1e3be5111e94af4558e452cb0ebc33da\output\AndroidManifest.xml:26:9-31:38
 	android:enabled
-		ADDED from [org.altbeacon:android-beacon-library:2.9.1] C:\Users\eunju\.android\build-cache\a5c9a2198e5a3a592c5b37279429e0280ef539e7\output\AndroidManifest.xml:28:13-35
+		ADDED from [org.altbeacon:android-beacon-library:2.9.1] C:\Users\JiHyeon\.android\build-cache\5705292b1e3be5111e94af4558e452cb0ebc33da\output\AndroidManifest.xml:28:13-35
 	android:label
-		ADDED from [org.altbeacon:android-beacon-library:2.9.1] C:\Users\eunju\.android\build-cache\a5c9a2198e5a3a592c5b37279429e0280ef539e7\output\AndroidManifest.xml:31:13-35
+		ADDED from [org.altbeacon:android-beacon-library:2.9.1] C:\Users\JiHyeon\.android\build-cache\5705292b1e3be5111e94af4558e452cb0ebc33da\output\AndroidManifest.xml:31:13-35
 	android:exported
-		ADDED from [org.altbeacon:android-beacon-library:2.9.1] C:\Users\eunju\.android\build-cache\a5c9a2198e5a3a592c5b37279429e0280ef539e7\output\AndroidManifest.xml:29:13-37
+		ADDED from [org.altbeacon:android-beacon-library:2.9.1] C:\Users\JiHyeon\.android\build-cache\5705292b1e3be5111e94af4558e452cb0ebc33da\output\AndroidManifest.xml:29:13-37
 	android:isolatedProcess
-		ADDED from [org.altbeacon:android-beacon-library:2.9.1] C:\Users\eunju\.android\build-cache\a5c9a2198e5a3a592c5b37279429e0280ef539e7\output\AndroidManifest.xml:30:13-44
+		ADDED from [org.altbeacon:android-beacon-library:2.9.1] C:\Users\JiHyeon\.android\build-cache\5705292b1e3be5111e94af4558e452cb0ebc33da\output\AndroidManifest.xml:30:13-44
 	android:name
-		ADDED from [org.altbeacon:android-beacon-library:2.9.1] C:\Users\eunju\.android\build-cache\a5c9a2198e5a3a592c5b37279429e0280ef539e7\output\AndroidManifest.xml:27:13-70
+		ADDED from [org.altbeacon:android-beacon-library:2.9.1] C:\Users\JiHyeon\.android\build-cache\5705292b1e3be5111e94af4558e452cb0ebc33da\output\AndroidManifest.xml:27:13-70
 service#org.altbeacon.beacon.BeaconIntentProcessor
-ADDED from [org.altbeacon:android-beacon-library:2.9.1] C:\Users\eunju\.android\build-cache\a5c9a2198e5a3a592c5b37279429e0280ef539e7\output\AndroidManifest.xml:32:9-35:40
+ADDED from [org.altbeacon:android-beacon-library:2.9.1] C:\Users\JiHyeon\.android\build-cache\5705292b1e3be5111e94af4558e452cb0ebc33da\output\AndroidManifest.xml:32:9-35:40
 	android:enabled
-		ADDED from [org.altbeacon:android-beacon-library:2.9.1] C:\Users\eunju\.android\build-cache\a5c9a2198e5a3a592c5b37279429e0280ef539e7\output\AndroidManifest.xml:34:13-35
+		ADDED from [org.altbeacon:android-beacon-library:2.9.1] C:\Users\JiHyeon\.android\build-cache\5705292b1e3be5111e94af4558e452cb0ebc33da\output\AndroidManifest.xml:34:13-35
 	android:exported
-		ADDED from [org.altbeacon:android-beacon-library:2.9.1] C:\Users\eunju\.android\build-cache\a5c9a2198e5a3a592c5b37279429e0280ef539e7\output\AndroidManifest.xml:35:13-37
+		ADDED from [org.altbeacon:android-beacon-library:2.9.1] C:\Users\JiHyeon\.android\build-cache\5705292b1e3be5111e94af4558e452cb0ebc33da\output\AndroidManifest.xml:35:13-37
 	android:name
-		ADDED from [org.altbeacon:android-beacon-library:2.9.1] C:\Users\eunju\.android\build-cache\a5c9a2198e5a3a592c5b37279429e0280ef539e7\output\AndroidManifest.xml:33:13-70
+		ADDED from [org.altbeacon:android-beacon-library:2.9.1] C:\Users\JiHyeon\.android\build-cache\5705292b1e3be5111e94af4558e452cb0ebc33da\output\AndroidManifest.xml:33:13-70

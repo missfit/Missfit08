@@ -1,5 +1,21 @@
 [
     {
+        "merged": "C:\\Users\\JiHyeon\\Desktop\\Missfit08\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\ic_sync_black_24dp.xml",
+        "source": "C:\\Users\\JiHyeon\\Desktop\\Missfit08\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_sync_black_24dp.xml"
+    },
+    {
+        "merged": "C:\\Users\\JiHyeon\\Desktop\\Missfit08\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\ic_clear_all_white_24dp.xml",
+        "source": "C:\\Users\\JiHyeon\\Desktop\\Missfit08\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_clear_all_white_24dp.xml"
+    },
+    {
+        "merged": "C:\\Users\\JiHyeon\\Desktop\\Missfit08\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\ic_track_changes_black_48dp.xml",
+        "source": "C:\\Users\\JiHyeon\\Desktop\\Missfit08\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_track_changes_black_48dp.xml"
+    },
+    {
+        "merged": "C:\\Users\\JiHyeon\\Desktop\\Missfit08\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\ic_bluetooth_disabled_white_24dp.xml",
+        "source": "C:\\Users\\JiHyeon\\Desktop\\Missfit08\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_bluetooth_disabled_white_24dp.xml"
+    },
+    {
         "merged": "C:\\android0812\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\ic_sync_black_24dp.xml",
         "source": "C:\\android0812\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_sync_black_24dp.xml"
     },
@@ -10,6 +26,10 @@
     {
         "merged": "C:\\android0812\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\ic_track_changes_black_48dp.xml",
         "source": "C:\\android0812\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_track_changes_black_48dp.xml"
+    },
+    {
+        "merged": "C:\\Users\\JiHyeon\\Desktop\\Missfit08\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\ic_bluetooth_white_24dp.xml",
+        "source": "C:\\Users\\JiHyeon\\Desktop\\Missfit08\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_bluetooth_white_24dp.xml"
     },
     {
         "merged": "C:\\android0812\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\ic_bluetooth_disabled_white_24dp.xml",
