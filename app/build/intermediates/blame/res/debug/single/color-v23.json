@@ -12,6 +12,18 @@
         "source": "C:\\Users\\JiHyeon\\.android\\build-cache\\46e7b7d22413892efeb0609ee704dccd52154ae0\\output\\res\\color-v23\\abc_tint_switch_thumb.xml"
     },
     {
+        "merged": "C:\\Users\\jihyehan\\Desktop\\git\\Missfit08\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_switch_thumb.xml",
+        "source": "C:\\Users\\jihyehan\\.android\\build-cache\\d81a5d21110f47d367741c0850c72e69425d849b\\output\\res\\color-v23\\abc_tint_switch_thumb.xml"
+    },
+    {
+        "merged": "C:\\Users\\jihyehan\\Desktop\\git\\Missfit08\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_color_highlight_material.xml",
+        "source": "C:\\Users\\jihyehan\\.android\\build-cache\\d81a5d21110f47d367741c0850c72e69425d849b\\output\\res\\color-v23\\abc_color_highlight_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\jihyehan\\Desktop\\git\\Missfit08\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_spinner.xml",
+        "source": "C:\\Users\\jihyehan\\.android\\build-cache\\d81a5d21110f47d367741c0850c72e69425d849b\\output\\res\\color-v23\\abc_tint_spinner.xml"
+    },
+    {
         "merged": "C:\\android0812\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\design_tint_password_toggle.xml",
         "source": "C:\\Users\\eunju\\.android\\build-cache\\3f439c19c264f024097a8f9c4c14eb3b2cc31f70\\output\\res\\color-v23\\design_tint_password_toggle.xml"
     },
@@ -28,12 +40,16 @@
         "source": "C:\\Users\\eunju\\.android\\build-cache\\1c6d8b0653368fc0503aecb64305e7618bc815ee\\output\\res\\color-v23\\abc_tint_switch_track.xml"
     },
     {
+        "merged": "C:\\Users\\jihyehan\\Desktop\\git\\Missfit08\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_switch_track.xml",
+        "source": "C:\\Users\\jihyehan\\.android\\build-cache\\d81a5d21110f47d367741c0850c72e69425d849b\\output\\res\\color-v23\\abc_tint_switch_track.xml"
+    },
+    {
         "merged": "C:\\android0812\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_switch_thumb.xml",
         "source": "C:\\Users\\eunju\\.android\\build-cache\\1c6d8b0653368fc0503aecb64305e7618bc815ee\\output\\res\\color-v23\\abc_tint_switch_thumb.xml"
     },
     {
-        "merged": "C:\\android0812\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_default.xml",
-        "source": "C:\\Users\\eunju\\.android\\build-cache\\1c6d8b0653368fc0503aecb64305e7618bc815ee\\output\\res\\color-v23\\abc_tint_default.xml"
+        "merged": "C:\\Users\\jihyehan\\Desktop\\git\\Missfit08\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_default.xml",
+        "source": "C:\\Users\\jihyehan\\.android\\build-cache\\d81a5d21110f47d367741c0850c72e69425d849b\\output\\res\\color-v23\\abc_tint_default.xml"
     },
     {
         "merged": "C:\\android0812\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_spinner.xml",
@@ -44,32 +60,20 @@
         "source": "C:\\Users\\JiHyeon\\.android\\build-cache\\46e7b7d22413892efeb0609ee704dccd52154ae0\\output\\res\\color-v23\\abc_tint_spinner.xml"
     },
     {
-        "merged": "C:\\Users\\JiHyeon\\Desktop\\Missfit08\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_btn_checkable.xml",
-        "source": "C:\\Users\\JiHyeon\\.android\\build-cache\\46e7b7d22413892efeb0609ee704dccd52154ae0\\output\\res\\color-v23\\abc_tint_btn_checkable.xml"
-    },
-    {
         "merged": "C:\\Users\\JiHyeon\\Desktop\\Missfit08\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\design_tint_password_toggle.xml",
         "source": "C:\\Users\\JiHyeon\\.android\\build-cache\\7e18ec442322497095d14dc0ff2c551aed4c2548\\output\\res\\color-v23\\design_tint_password_toggle.xml"
-    },
-    {
-        "merged": "C:\\android0812\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_color_highlight_material.xml",
-        "source": "C:\\Users\\eunju\\.android\\build-cache\\1c6d8b0653368fc0503aecb64305e7618bc815ee\\output\\res\\color-v23\\abc_color_highlight_material.xml"
     },
     {
         "merged": "C:\\Users\\JiHyeon\\Desktop\\Missfit08\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_btn_colored_borderless_text_material.xml",
         "source": "C:\\Users\\JiHyeon\\.android\\build-cache\\46e7b7d22413892efeb0609ee704dccd52154ae0\\output\\res\\color-v23\\abc_btn_colored_borderless_text_material.xml"
     },
     {
-        "merged": "C:\\Users\\JiHyeon\\Desktop\\Missfit08\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_color_highlight_material.xml",
-        "source": "C:\\Users\\JiHyeon\\.android\\build-cache\\46e7b7d22413892efeb0609ee704dccd52154ae0\\output\\res\\color-v23\\abc_color_highlight_material.xml"
+        "merged": "C:\\android0812\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_color_highlight_material.xml",
+        "source": "C:\\Users\\eunju\\.android\\build-cache\\1c6d8b0653368fc0503aecb64305e7618bc815ee\\output\\res\\color-v23\\abc_color_highlight_material.xml"
     },
     {
         "merged": "C:\\Users\\JiHyeon\\Desktop\\Missfit08\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_seek_thumb.xml",
         "source": "C:\\Users\\JiHyeon\\.android\\build-cache\\46e7b7d22413892efeb0609ee704dccd52154ae0\\output\\res\\color-v23\\abc_tint_seek_thumb.xml"
-    },
-    {
-        "merged": "C:\\android0812\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_btn_checkable.xml",
-        "source": "C:\\Users\\eunju\\.android\\build-cache\\1c6d8b0653368fc0503aecb64305e7618bc815ee\\output\\res\\color-v23\\abc_tint_btn_checkable.xml"
     },
     {
         "merged": "C:\\android0812\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_btn_colored_borderless_text_material.xml",
@@ -78,5 +82,41 @@
     {
         "merged": "C:\\Users\\JiHyeon\\Desktop\\Missfit08\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_edittext.xml",
         "source": "C:\\Users\\JiHyeon\\.android\\build-cache\\46e7b7d22413892efeb0609ee704dccd52154ae0\\output\\res\\color-v23\\abc_tint_edittext.xml"
+    },
+    {
+        "merged": "C:\\Users\\jihyehan\\Desktop\\git\\Missfit08\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_seek_thumb.xml",
+        "source": "C:\\Users\\jihyehan\\.android\\build-cache\\d81a5d21110f47d367741c0850c72e69425d849b\\output\\res\\color-v23\\abc_tint_seek_thumb.xml"
+    },
+    {
+        "merged": "C:\\android0812\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_default.xml",
+        "source": "C:\\Users\\eunju\\.android\\build-cache\\1c6d8b0653368fc0503aecb64305e7618bc815ee\\output\\res\\color-v23\\abc_tint_default.xml"
+    },
+    {
+        "merged": "C:\\Users\\jihyehan\\Desktop\\git\\Missfit08\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\design_tint_password_toggle.xml",
+        "source": "C:\\Users\\jihyehan\\.android\\build-cache\\2a4e17729a052bac46dd6ed1354a2265ac3199ee\\output\\res\\color-v23\\design_tint_password_toggle.xml"
+    },
+    {
+        "merged": "C:\\Users\\JiHyeon\\Desktop\\Missfit08\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_btn_checkable.xml",
+        "source": "C:\\Users\\JiHyeon\\.android\\build-cache\\46e7b7d22413892efeb0609ee704dccd52154ae0\\output\\res\\color-v23\\abc_tint_btn_checkable.xml"
+    },
+    {
+        "merged": "C:\\Users\\jihyehan\\Desktop\\git\\Missfit08\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_btn_colored_borderless_text_material.xml",
+        "source": "C:\\Users\\jihyehan\\.android\\build-cache\\d81a5d21110f47d367741c0850c72e69425d849b\\output\\res\\color-v23\\abc_btn_colored_borderless_text_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\JiHyeon\\Desktop\\Missfit08\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_color_highlight_material.xml",
+        "source": "C:\\Users\\JiHyeon\\.android\\build-cache\\46e7b7d22413892efeb0609ee704dccd52154ae0\\output\\res\\color-v23\\abc_color_highlight_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\jihyehan\\Desktop\\git\\Missfit08\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_btn_checkable.xml",
+        "source": "C:\\Users\\jihyehan\\.android\\build-cache\\d81a5d21110f47d367741c0850c72e69425d849b\\output\\res\\color-v23\\abc_tint_btn_checkable.xml"
+    },
+    {
+        "merged": "C:\\Users\\jihyehan\\Desktop\\git\\Missfit08\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_edittext.xml",
+        "source": "C:\\Users\\jihyehan\\.android\\build-cache\\d81a5d21110f47d367741c0850c72e69425d849b\\output\\res\\color-v23\\abc_tint_edittext.xml"
+    },
+    {
+        "merged": "C:\\android0812\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_btn_checkable.xml",
+        "source": "C:\\Users\\eunju\\.android\\build-cache\\1c6d8b0653368fc0503aecb64305e7618bc815ee\\output\\res\\color-v23\\abc_tint_btn_checkable.xml"
     }
 ]
