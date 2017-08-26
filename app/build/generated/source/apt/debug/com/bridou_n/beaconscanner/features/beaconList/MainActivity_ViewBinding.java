@@ -5,9 +5,9 @@ import android.support.annotation.CallSuper;
 import android.support.annotation.UiThread;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -21,7 +21,7 @@ import java.lang.Override;
 public class MainActivity_ViewBinding<T extends MainActivity> implements Unbinder {
   protected T target;
 
-  private View view2131493001;
+  private View view2131492994;
 
   @UiThread
   public MainActivity_ViewBinding(final T target, View source) {
@@ -32,9 +32,10 @@ public class MainActivity_ViewBinding<T extends MainActivity> implements Unbinde
     target.rootView = Utils.findRequiredViewAsType(source, R.id.activity_main, "field 'rootView'", CoordinatorLayout.class);
     target.bluetoothState = Utils.findRequiredViewAsType(source, R.id.bluetooth_state, "field 'bluetoothState'", TextView.class);
     target.emptyView = Utils.findRequiredViewAsType(source, R.id.empty_view, "field 'emptyView'", RelativeLayout.class);
+    target.beaconsRv = Utils.findRequiredViewAsType(source, R.id.beacons_rv, "field 'beaconsRv'", RecyclerView.class);
     view = Utils.findRequiredView(source, R.id.scan_fab, "field 'scanFab' and method 'startStopScan'");
     target.scanFab = Utils.castView(view, R.id.scan_fab, "field 'scanFab'", FloatingActionButton.class);
-    view2131493001 = view;
+    view2131492994 = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -46,14 +47,6 @@ public class MainActivity_ViewBinding<T extends MainActivity> implements Unbinde
     target.textView2 = Utils.findRequiredViewAsType(source, R.id.textView2, "field 'textView2'", TextView.class);
     target.textView1_1 = Utils.findRequiredViewAsType(source, R.id.textView1_1, "field 'textView1_1'", TextView.class);
     target.textView2_1 = Utils.findRequiredViewAsType(source, R.id.textView2_1, "field 'textView2_1'", TextView.class);
-    target.textView3 = Utils.findRequiredViewAsType(source, R.id.textView3, "field 'textView3'", TextView.class);
-    target.textView4 = Utils.findRequiredViewAsType(source, R.id.textView4, "field 'textView4'", TextView.class);
-    target.textView3_1 = Utils.findRequiredViewAsType(source, R.id.textView3_1, "field 'textView3_1'", TextView.class);
-    target.textView4_1 = Utils.findRequiredViewAsType(source, R.id.textView4_1, "field 'textView4_1'", TextView.class);
-    target.leftHand = Utils.findRequiredViewAsType(source, R.id.leftHand, "field 'leftHand'", ImageView.class);
-    target.rightHand = Utils.findRequiredViewAsType(source, R.id.rightHand, "field 'rightHand'", ImageView.class);
-    target.leftFoot = Utils.findRequiredViewAsType(source, R.id.leftFoot, "field 'leftFoot'", ImageView.class);
-    target.rightFoot = Utils.findRequiredViewAsType(source, R.id.rightFoot, "field 'rightFoot'", ImageView.class);
   }
 
   @Override
@@ -66,23 +59,16 @@ public class MainActivity_ViewBinding<T extends MainActivity> implements Unbinde
     target.rootView = null;
     target.bluetoothState = null;
     target.emptyView = null;
+    target.beaconsRv = null;
     target.scanFab = null;
     target.scanProgress = null;
     target.textView1 = null;
     target.textView2 = null;
     target.textView1_1 = null;
     target.textView2_1 = null;
-    target.textView3 = null;
-    target.textView4 = null;
-    target.textView3_1 = null;
-    target.textView4_1 = null;
-    target.leftHand = null;
-    target.rightHand = null;
-    target.leftFoot = null;
-    target.rightFoot = null;
 
-    view2131493001.setOnClickListener(null);
-    view2131493001 = null;
+    view2131492994.setOnClickListener(null);
+    view2131492994 = null;
 
     this.target = null;
   }
