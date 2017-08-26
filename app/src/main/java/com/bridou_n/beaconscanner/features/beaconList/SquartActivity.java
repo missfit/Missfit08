@@ -74,7 +74,7 @@ import android.speech.tts.TextToSpeech;
 import static com.bridou_n.beaconscanner.R.id.text;
 import static com.bridou_n.beaconscanner.R.id.textView1;
 //
-
+//
 public class SquartActivity extends AppCompatActivity implements BeaconConsumer, EasyPermissions.PermissionCallbacks, TextToSpeech.OnInitListener
 {
 
