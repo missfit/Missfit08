@@ -53,7 +53,6 @@ MERGED from [com.android.support:support-core-utils:24.2.1] C:\Users\JiHyeon\.an
 MERGED from [com.android.support:animated-vector-drawable:24.2.1] C:\Users\JiHyeon\.android\build-cache\5cdbcd4b3e0eb572c020da3b9b150de5c96274d7\output\AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:support-vector-drawable:24.2.1] C:\Users\JiHyeon\.android\build-cache\abfb2da2aa4ae39f0b91527b1fae7bcbbcb6dbdc\output\AndroidManifest.xml:23:5-20
 MERGED from [com.android.support:support-compat:24.2.1] C:\Users\JiHyeon\.android\build-cache\514d8b4c0d6ea1eed22316048c6d4db9035732d0\output\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\JiHyeon\.android\build-cache\500d9e8805407d81b6fa2277b3d64fe53e18cd0d\output\AndroidManifest.xml:9:5-20
 	android:label
 		ADDED from C:\Users\JiHyeon\Desktop\Missfit08\app\src\main\AndroidManifest.xml:18:9-41
 	android:supportsRtl
@@ -127,7 +126,6 @@ MERGED from [com.android.support:support-core-utils:24.2.1] C:\Users\JiHyeon\.an
 MERGED from [com.android.support:animated-vector-drawable:24.2.1] C:\Users\JiHyeon\.android\build-cache\5cdbcd4b3e0eb572c020da3b9b150de5c96274d7\output\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-vector-drawable:24.2.1] C:\Users\JiHyeon\.android\build-cache\abfb2da2aa4ae39f0b91527b1fae7bcbbcb6dbdc\output\AndroidManifest.xml:21:5-43
 MERGED from [com.android.support:support-compat:24.2.1] C:\Users\JiHyeon\.android\build-cache\514d8b4c0d6ea1eed22316048c6d4db9035732d0\output\AndroidManifest.xml:21:5-23:58
-MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\JiHyeon\.android\build-cache\500d9e8805407d81b6fa2277b3d64fe53e18cd0d\output\AndroidManifest.xml:5:5-7:41
 	tools:overrideLibrary
 		ADDED from [com.android.support:appcompat-v7:24.2.1] C:\Users\JiHyeon\.android\build-cache\46e7b7d22413892efeb0609ee704dccd52154ae0\output\AndroidManifest.xml:23:9-75
 	android:targetSdkVersion
