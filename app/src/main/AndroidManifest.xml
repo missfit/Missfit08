@@ -27,10 +27,14 @@
             </intent-filter>
         </activity>
         <activity android:name=".features.beaconList.MainActivity" />
+        <activity android:name=".features.beaconList.SquartActivity" />
         <activity android:name=".features.beaconList.choice" />
         <activity android:name=".features.beaconList.squatvideo" />
         <activity android:name=".features.beaconList.lungevideo" />
-        <activity android:name=".features.beaconList.ropevideo"></activity>
+
+        <activity android:name=".features.beaconList.ropevideo" >
+
+        </activity>
     </application>
 
 </manifest>

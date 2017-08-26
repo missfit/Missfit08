@@ -1,27 +1,11 @@
 [
     {
-        "merged": "C:\\android0812\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi\\ic_sync_black_24dp.png",
-        "source": "C:\\android0812\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxhdpi\\ic_sync_black_24dp.png"
-    },
-    {
-        "merged": "C:\\android0812\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi\\ic_track_changes_black_48dp.png",
-        "source": "C:\\android0812\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxhdpi\\ic_track_changes_black_48dp.png"
-    },
-    {
         "merged": "C:\\Users\\JiHyeon\\Desktop\\Missfit08\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi\\ic_sync_black_24dp.png",
         "source": "C:\\Users\\JiHyeon\\Desktop\\Missfit08\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxhdpi\\ic_sync_black_24dp.png"
     },
     {
         "merged": "C:\\Users\\JiHyeon\\Desktop\\Missfit08\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi\\ic_bluetooth_white_24dp.png",
         "source": "C:\\Users\\JiHyeon\\Desktop\\Missfit08\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxhdpi\\ic_bluetooth_white_24dp.png"
-    },
-    {
-        "merged": "C:\\android0812\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi\\ic_bluetooth_disabled_white_24dp.png",
-        "source": "C:\\android0812\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxhdpi\\ic_bluetooth_disabled_white_24dp.png"
-    },
-    {
-        "merged": "C:\\android0812\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi\\ic_bluetooth_white_24dp.png",
-        "source": "C:\\android0812\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxhdpi\\ic_bluetooth_white_24dp.png"
     },
     {
         "merged": "C:\\Users\\JiHyeon\\Desktop\\Missfit08\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi\\ic_bluetooth_disabled_white_24dp.png",
@@ -34,9 +18,5 @@
     {
         "merged": "C:\\Users\\JiHyeon\\Desktop\\Missfit08\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi\\ic_track_changes_black_48dp.png",
         "source": "C:\\Users\\JiHyeon\\Desktop\\Missfit08\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxhdpi\\ic_track_changes_black_48dp.png"
-    },
-    {
-        "merged": "C:\\android0812\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi\\ic_clear_all_white_24dp.png",
-        "source": "C:\\android0812\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxhdpi\\ic_clear_all_white_24dp.png"
     }
 ]

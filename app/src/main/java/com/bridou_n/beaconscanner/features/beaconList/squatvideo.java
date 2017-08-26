@@ -117,7 +117,7 @@ public class squatvideo extends AppCompatActivity {
     }
 
     public void NextButton(View v){
-        Intent intent = new Intent(squatvideo.this, MainActivity.class);
+        Intent intent = new Intent(squatvideo.this, SquartActivity.class);
         startActivity(intent);
     }
 }

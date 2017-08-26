@@ -1,9 +1,5 @@
 [
     {
-        "merged": "C:\\android0812\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\ic_launcher.png",
-        "source": "C:\\android0812\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
-    },
-    {
         "merged": "C:\\Users\\JiHyeon\\Desktop\\Missfit08\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\ic_launcher.png",
         "source": "C:\\Users\\JiHyeon\\Desktop\\Missfit08\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
     }

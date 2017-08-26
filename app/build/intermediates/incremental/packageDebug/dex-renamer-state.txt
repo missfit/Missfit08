@@ -1,4 +1,7 @@
-#Sat Aug 19 13:10:41 KST 2017
-base.0=C\:\\android0812\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main
-renamed.0=classes.dex
-file.0=C\:\\android0812\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main\\classes.dex
+#Sat Aug 26 13:00:25 KST 2017
+base.0=C\:\\Users\\JiHyeon\\Desktop\\Missfit08\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_ee64faf19cf1746b5aef83858f0d68e1262955f9
+renamed.1=classes.dex
+renamed.0=classes2.dex
+file.1=C\:\\Users\\JiHyeon\\Desktop\\Missfit08\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run-bootstrap_9bb1b6fb84dedde5738b951d3bb615769c46aa87\\classes.dex
+base.1=C\:\\Users\\JiHyeon\\Desktop\\Missfit08\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run-bootstrap_9bb1b6fb84dedde5738b951d3bb615769c46aa87
+file.0=C\:\\Users\\JiHyeon\\Desktop\\Missfit08\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_ee64faf19cf1746b5aef83858f0d68e1262955f9\\classes.dex

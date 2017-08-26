@@ -36,10 +36,12 @@
             </intent-filter>
         </activity>
         <activity android:name="com.bridou_n.beaconscanner.features.beaconList.MainActivity" />
+        <activity android:name="com.bridou_n.beaconscanner.features.beaconList.SquartActivity" />
         <activity android:name="com.bridou_n.beaconscanner.features.beaconList.choice" />
         <activity android:name="com.bridou_n.beaconscanner.features.beaconList.squatvideo" />
         <activity android:name="com.bridou_n.beaconscanner.features.beaconList.lungevideo" />
-        <activity android:name="com.bridou_n.beaconscanner.features.beaconList.ropevideo" />
+        <activity android:name="com.bridou_n.beaconscanner.features.beaconList.ropevideo" >
+        </activity>
 
         <receiver android:name="org.altbeacon.beacon.startup.StartupBroadcastReceiver" >
             <intent-filter>

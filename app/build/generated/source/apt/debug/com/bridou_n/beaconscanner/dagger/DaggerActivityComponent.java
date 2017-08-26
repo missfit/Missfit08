@@ -6,6 +6,8 @@ import android.view.animation.Animation;
 import com.bridou_n.beaconscanner.events.RxBus;
 import com.bridou_n.beaconscanner.features.beaconList.MainActivity;
 import com.bridou_n.beaconscanner.features.beaconList.MainActivity_MembersInjector;
+import com.bridou_n.beaconscanner.features.beaconList.SquartActivity;
+import com.bridou_n.beaconscanner.features.beaconList.SquartActivity_MembersInjector;
 import com.bridou_n.beaconscanner.utils.BluetoothManager;
 import com.bridou_n.beaconscanner.utils.BluetoothManager_Factory;
 import dagger.MembersInjector;
@@ -37,6 +39,8 @@ public final class DaggerActivityComponent implements ActivityComponent {
   private Provider<Realm> realmProvider;
 
   private MembersInjector<MainActivity> mainActivityMembersInjector;
+
+  private MembersInjector<SquartActivity> squartActivityMembersInjector;
 
   private DaggerActivityComponent(Builder builder) {
     assert builder != null;
@@ -107,11 +111,24 @@ public final class DaggerActivityComponent implements ActivityComponent {
             providesBeaconManagerProvider,
             rxBusProvider,
             realmProvider);
+
+    this.squartActivityMembersInjector =
+        SquartActivity_MembersInjector.create(
+            providesFabSearchAnimationProvider,
+            bluetoothManagerProvider,
+            providesBeaconManagerProvider,
+            rxBusProvider,
+            realmProvider);
   }
 
   @Override
   public void inject(MainActivity activity) {
     mainActivityMembersInjector.injectMembers(activity);
+  }
+
+  @Override
+  public void inject(SquartActivity activity) {
+    squartActivityMembersInjector.injectMembers(activity);
   }
 
   public static final class Builder {

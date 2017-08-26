@@ -1,6 +1,9 @@
 package com.bridou_n.beaconscanner.dagger;
 
+import android.app.Activity;
+
 import com.bridou_n.beaconscanner.features.beaconList.MainActivity;
+import com.bridou_n.beaconscanner.features.beaconList.SquartActivity;
 
 import dagger.Component;
 
@@ -14,5 +17,8 @@ import dagger.Component;
                 AnimationModule.class
         })
 public interface ActivityComponent {
+
         void inject(MainActivity activity);
+        void inject(SquartActivity activity);
+
 }
