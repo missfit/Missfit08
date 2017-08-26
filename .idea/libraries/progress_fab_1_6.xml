@@ -6,7 +6,7 @@
     </CLASSES>
     <JAVADOC />
     <SOURCES>
-      <root url="jar://C:/gradle-3.5-all/caches/modules-2/files-2.1/com.dmitrymalkovich.android/progress-fab/1.6/502792192db48eefebaf2a6070d3abf3eb3f5125/progress-fab-1.6-sources.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.dmitrymalkovich.android/progress-fab/1.6/502792192db48eefebaf2a6070d3abf3eb3f5125/progress-fab-1.6-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

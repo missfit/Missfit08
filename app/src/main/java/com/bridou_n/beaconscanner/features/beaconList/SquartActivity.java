@@ -67,14 +67,13 @@ import pub.devrel.easypermissions.EasyPermissions;
 import rx.Observable;
 import rx.Subscription;
 import rx.android.schedulers.AndroidSchedulers;
-import rx.exceptions.OnErrorNotImplementedException;
-import rx.functions.Func1;
 import rx.subscriptions.CompositeSubscription;
 
 import android.speech.tts.TextToSpeech;
 
 import static com.bridou_n.beaconscanner.R.id.text;
 import static com.bridou_n.beaconscanner.R.id.textView1;
+//
 
 public class SquartActivity extends AppCompatActivity implements BeaconConsumer, EasyPermissions.PermissionCallbacks, TextToSpeech.OnInitListener
 {
@@ -90,9 +89,11 @@ public class SquartActivity extends AppCompatActivity implements BeaconConsumer,
     public static String [] major={"-1","-1","-1","-1","-1","-1","-1","-1","-1","-1","-1","-1","-1","-1","-1","-1","-1","-1","-1","-1"};//지혜
     public static String [] minor={"-1","-1","-1","-1","-1","-1","-1","-1","-1","-1","-1","-1","-1","-1","-1","-1","-1","-1","-1","-1"};//지혜
     public static String [] yaw={"-1","-1","-1","-1","-1","-1","-1","-1","-1","-1","-1","-1","-1","-1","-1","-1","-1","-1","-1","-1"};//지혜
+    public static String [] roll={"-1","-1","-1","-1","-1","-1","-1","-1","-1","-1","-1","-1","-1","-1","-1","-1","-1","-1","-1","-1"};//지혜
     public static char  yaw0; //지혜
     public static char  yaw10; //지혜
     public static char  yaw100; //지혜
+    public static char roll0;
     public static char yaw1; //지혜
     public static String one="0"; //은주//지혜(char-->string 변수형 변환)
     public static String two="0";//은주 //지혜(char-->string 변수형 변환)
@@ -102,10 +103,11 @@ public class SquartActivity extends AppCompatActivity implements BeaconConsumer,
     public static int count=0;
     public static int test=0;
 
+    int exnum, gaptime, pausetime;
+
     TextToSpeech myTTS;
 
-    private CompositeSubscription subs =  new CompositeSubscription();;
-
+    private CompositeSubscription subs = new CompositeSubscription();
 
     @Inject @Named("fab_search") Animation rotate;
     @Inject BluetoothManager bluetooth;
@@ -118,229 +120,132 @@ public class SquartActivity extends AppCompatActivity implements BeaconConsumer,
     @BindView(R.id.bluetooth_state) TextView bluetoothState;
 
     @BindView(R.id.empty_view) RelativeLayout emptyView;
-    //@BindView(R.id.beacons_rv) RecyclerView beaconsRv;
+    @BindView(R.id.beacons_rv) RecyclerView beaconsRv;
     @BindView(R.id.scan_fab) FloatingActionButton scanFab;
     @BindView(R.id.scan_progress) ProgressBar scanProgress;
     @BindView(R.id.textView1) TextView textView1;
     @BindView(R.id.textView2) TextView textView2;
     @BindView(R.id.textView1_1) TextView textView1_1;
     @BindView(R.id.textView2_1) TextView textView2_1;
-    @BindView(R.id.textView3) TextView textView3;
-    @BindView(R.id.textView4) TextView textView4;
-    @BindView(R.id.textView3_1) TextView textView3_1;
-    @BindView(R.id.textView4_1) TextView textView4_1;
 
-    @BindView(R.id.leftHand) ImageView leftHand; //지혜
-    @BindView(R.id.rightHand) ImageView rightHand; //지혜
-    @BindView(R.id.leftFoot) ImageView leftFoot; //지혜
-    @BindView(R.id.rightFoot) ImageView rightFoot; //지혜
+
 
     /*value*/
     int leftHandValue ;
+    int preValue;
+    int state;
     int rightHandValue;
     int leftFootValue;
     int rightFootValue;
     int diff ;
+    int time=0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_squart);
         ButterKnife.bind(this);
-
-       AppSingleton.activityComponent().inject(this);
+        AppSingleton.activityComponent().inject(this);
         myTTS = new TextToSpeech(this,this);
         setSupportActionBar(toolbar);
         toolbar.inflateMenu(R.menu.main_menu);
         myTTS.setSpeechRate(1);
-        RealmResults<BeaconSaved> beaconResults;
+        RealmResults<BeaconSaved> beaconResults = realm.where(BeaconSaved.class).findAllSortedAsync(new String[]{"lastMinuteSeen", "distance"}, new Sort[]{Sort.DESCENDING, Sort.ASCENDING});
 
-        realm = Realm.getDefaultInstance();
-        beaconResults= realm.where(BeaconSaved.class).findAllSortedAsync(new String[]{"lastMinuteSeen", "distance"}, new Sort[]{Sort.DESCENDING, Sort.ASCENDING});
+        beaconResults.addChangeListener(results -> {
+            if (results.size() == 0 && emptyView.getVisibility() != View.VISIBLE) {
+                beaconsRv.setVisibility(View.GONE);
+                emptyView.setVisibility(View.VISIBLE);
+            } else if (results.size() > 0 && beaconsRv.getVisibility() != View.VISIBLE) {
+                beaconsRv.setVisibility(View.VISIBLE);
+                emptyView.setVisibility(View.GONE);
+            }
+        });
 
-//        beaconResults.addChangeListener(results -> {
-//            if (results.size() == 0 && emptyView.getVisibility() != View.VISIBLE) {
-//                beaconsRv.setVisibility(View.GONE);
-//                emptyView.setVisibility(View.VISIBLE);
-//            } else if (results.size() > 0 && beaconsRv.getVisibility() != View.VISIBLE) {
-//                beaconsRv.setVisibility(View.VISIBLE);
-//                emptyView.setVisibility(View.GONE);
-//            }
-//        });
-//
-//        beaconsRv.setHasFixedSize(true);
-//        beaconsRv.setLayoutManager(new LinearLayoutManager(this));
-//        beaconsRv.addItemDecoration(new DividerItemDecoration(this, null));
+        beaconsRv.setHasFixedSize(true);
+        beaconsRv.setLayoutManager(new LinearLayoutManager(this));
+        beaconsRv.addItemDecoration(new DividerItemDecoration(this, null));
+        // beaconsRv.setAdapter(new BeaconsRecyclerViewAdapter(this, beaconResults, true));//지혜
+
+        // Set our event handler
 
         subs.add(rxBus.toObserverable() //1
                 .observeOn(AndroidSchedulers.mainThread()) // We use this so we use the realm on the good thread & we can make UI changes
                 .subscribe(e -> {
                     if (e instanceof Events.RangeBeacon) {
+                        Log.d("RxBus", "RxBus");
                         updateUiWithBeaconsArround(((Events.RangeBeacon) e).getBeacons());
                         int a = 0;
 
-                        for (int i = 0; i < 10; i++) {
-                            if (major[i].equals("1234") && minor[i].equals("5678")) {
-                                if (a % 2 == 0) {
-                                    textView1.setText("major = 1234" + "\n" + "minor = 5678" + "\n" + "yaw = " + yaw[i]);//지혜
-                                } else if (a % 2 == 1) {
-                                    textView1_1.setText("yaw = " + yaw[i]);//지혜
-                                }
-                                a++;
-                                one = yaw[i];
-                                Log.d("1234 5678", "1234 5678 called htgjkjl,khhgjghkgkhng");
-                                // Log.d("yaw_i", yaw[i]);
-                                leftHandValue = Integer.parseInt(one);
+                        //for (int i = 0; i < 10; i++) {
+                        Log.d("roll_i", roll[0]);
+                        Log.d("major_i", major[0]);
+                        Log.d("minor_i", minor[0]);
+                        if (major[0].equals("1234") && minor[0].equals("5678")) {
+                            //  if (a % 2 == 0) {
+                            textView1.setText("major = 1234" + "\n" + "minor = 5678" + "\n" + "roll = " + roll[0]);//지혜
+                            //} else if (a % 2 == 1) {
+                            //  textView1_1.setText("roll = " + roll[i]);//지혜
+                            //}
+                            a++;
+                            one = roll[0];
+                            Log.d("1234", "5678");
+                            leftHandValue = Integer.parseInt(one);
                                 /*왼손 범위 적용
                                 * one값 이용
                                 * */
-                                if (leftHandValue < 2000) {
-                                    leftHand.setImageResource(R.drawable.lh11);
-                                } else if (leftHandValue < 2800) {
-                                    leftHand.setImageResource(R.drawable.lh22);
-                                } else if (leftHandValue < 3500) {
-                                    leftHand.setImageResource(R.drawable.lh33);
-                                } else {
-                                    leftHand.setImageResource(R.drawable.lh44);
+                            Bundle intent = getIntent().getExtras();
+                            exnum = Integer.parseInt(intent.getString("E_NUM3"));
+                            gaptime = Integer.parseInt(intent.getString("E_TIME3"));
+                            pausetime = Integer.parseInt(intent.getString("P_TIME3"));
+
+                            if (leftHandValue ==0) {
+                                myTTS.speak("UP", TextToSpeech.QUEUE_FLUSH, null);
+                                // leftHand.setImageResource(R.drawable.lh11);
+                            } else if (leftHandValue ==1) {
+                                myTTS.speak("유지", TextToSpeech.QUEUE_FLUSH, null);
+                                //leftHand.setImageResource(R.drawable.lh22);
+                                //함수로 가서 timertask
+                            } else if (leftHandValue ==2&&preValue==1) {
+                                state=1;//올라가고 있는 상태
+                                myTTS.speak("UP", TextToSpeech.QUEUE_FLUSH, null);
+                                //leftHand.setImageResource(R.drawable.lh33);
+                            } else if (leftHandValue ==2&&preValue==3) {
+                                state=0;//내려가고 있는 상태
+                                myTTS.speak("DOWN", TextToSpeech.QUEUE_FLUSH, null);
+                                //leftHand.setImageResource(R.drawable.lh33);
+                            }else if (leftHandValue ==2&&preValue==2&&state==1) {
+                                //올라가고 있음
+                                myTTS.speak("UP", TextToSpeech.QUEUE_FLUSH, null);
+                                //leftHand.setImageResource(R.drawable.lh33);
+                            }else if (leftHandValue ==2&&preValue==2&&state==0) {
+                                //내려가고가고 있음
+                                myTTS.speak("DOWN", TextToSpeech.QUEUE_FLUSH, null);
+                                //leftHand.setImageResource(R.drawable.lh33);
+                            }else if (leftHandValue ==3&&preValue==3) {
+                                myTTS.speak("이제 다시 다운해라", TextToSpeech.QUEUE_FLUSH, null);
+                                //leftHand.setImageResource(R.drawable.lh44);
+                            }else if (leftHandValue ==3) {
+                                time++;
+                                myTTS.speak("일어남"+time+"회", TextToSpeech.QUEUE_FLUSH, null);
+                                //leftHand.setImageResource(R.drawable.lh44);
+                                if(time==exnum){
+                                    myTTS.speak("끝", TextToSpeech.QUEUE_FLUSH, null);
+                                    //함수추가//아예멈추는
+                                    onDestroy();
                                 }
+
                             }
+                            preValue=leftHandValue;
                         }
                     }
+                    //}
      /*               for(int i=0;i<10;i++){
                         yaw[i]="-1";
                         major[i]="-1";
                         minor[i]="-1";
                     }*/
-                },throwable -> Log.e("Error", throwable.getMessage())));
-
-
-        subs.add(rxBus.toObserverable()
-                .observeOn(AndroidSchedulers.mainThread()) // We use this so we use the realm on the good thread & we can make UI changes
-                .subscribe(e -> {
-                    if (e instanceof Events.RangeBeacon) {
-                        updateUiWithBeaconsArround(((Events.RangeBeacon) e).getBeacons());
-                        int b=0;
-                        for(int i=0;i<10;i++) {
-                            if (major[i].equals("1234") && minor[i].equals("6789")) {
-                                if (b % 2 == 0) {
-                                    textView2.setText("major = 1234" + "\n" + "minor = 6789" + "\n" + "yaw = " + yaw[i]);//지혜
-                                } else if (b % 2 == 1) {
-                                    textView2_1.setText("yaw = " + yaw[i]);//지혜
-                                }
-                                b++;
-                                two = yaw[i];
-                                rightHandValue = Integer.parseInt(two);
-                            /*오른손 범위 적용
-                            * * two 변수 이용
-                            * * */
-                                if (rightHandValue < 2000) {
-                                    rightHand.setImageResource(R.drawable.rh11);
-                                    if(Math.abs(rightHandValue - leftHandValue)>=1500)
-                                        myTTS.speak("삐빅", TextToSpeech.QUEUE_FLUSH, null);
-                                } else if (rightHandValue < 2800) {
-                                    rightHand.setImageResource(R.drawable.rh22);
-                                    if(Math.abs(rightHandValue - leftHandValue)>=1500)
-                                        myTTS.speak("삐빅", TextToSpeech.QUEUE_FLUSH, null);
-
-                                } else if (rightHandValue < 3500) {
-                                    rightHand.setImageResource(R.drawable.rh33);
-                                    if(Math.abs(rightHandValue - leftHandValue)>=1500)
-                                        myTTS.speak("삐빅", TextToSpeech.QUEUE_FLUSH, null);
-
-                                } else {
-                                    rightHand.setImageResource(R.drawable.rh44);
-                                    if(Math.abs(rightHandValue - leftHandValue)>=1500)
-                                        myTTS.speak("삐빅", TextToSpeech.QUEUE_FLUSH, null);
-                                }
-
-                                //String text = "삐";
-                                //  myTTS.speak(text, TextToSpeech.QUEUE_FLUSH, null);
-                            }
-                        }
-                    }
-                    /*
-                    for(int i=0;i<10;i++){
-                        yaw[i]="-1";
-                        major[i]="-1";
-                        minor[i]="-1";
-                    }*/
-                },throwable -> Log.e("Error", throwable.getMessage())));
-
-
-
-        subs.add(rxBus.toObserverable()
-                .observeOn(AndroidSchedulers.mainThread()) // We use this so we use the realm on the good thread & we can make UI changes
-                .subscribe(e -> {
-                    if (e instanceof Events.RangeBeacon) {
-                        updateUiWithBeaconsArround(((Events.RangeBeacon) e).getBeacons());
-                        int a=0;
-                        int b=0;
-                        int c=0;
-                        int d=0;
-                        for(int i=0;i<10;i++) {
-                            // Log.d("yaw_i", yaw[i]);
-                            if (major[i].equals("1234") && minor[i].equals("7890")) {
-                                Log.d("1234", "7890");
-                                if (c % 2 == 0) {
-                                    textView3.setText("major = 1234" + "\n" + "minor = 7890" + "\n" + "yaw = " + yaw[i]);//지혜
-                                } else if (c % 2 == 1) {
-                                    textView3_1.setText("yaw = " + yaw[i]);//지혜
-                                }
-                                c++;
-                                three = yaw[i];
-                                leftFootValue = Integer.parseInt(three);
-                                //앞 첫 자리수를 저장
-                                    /*왼발 범위 적용
-                                    * three변수 이용
-                                    * */
-                                if (leftFootValue < 1000) {
-                                    leftFoot.setImageResource(R.drawable.lf111);
-                                } else if (leftFootValue < 1400) {
-                                    leftFoot.setImageResource(R.drawable.lf2);
-                                } else if (leftFootValue < 1800) {
-                                    leftFoot.setImageResource(R.drawable.lf3);
-                                } else {
-                                    leftFoot.setImageResource(R.drawable.lf4);
-                                }
-                            }
-                        }
-                    }
                 }));
-        subs.add(rxBus.toObserverable()
-                .observeOn(AndroidSchedulers.mainThread()) // We use this so we use the realm on the good thread & we can make UI changes
-                .subscribe(e -> {
-                    if (e instanceof Events.RangeBeacon) {
-                        //          Log.d("RxBus","RxBus");
-                        updateUiWithBeaconsArround(((Events.RangeBeacon) e).getBeacons());
-                        int d=0;
-                        for(int i=0;i<10;i++) {
-                            if (major[i].equals("1234") && minor[i].equals("8901")) {
-                                Log.d("1234", "8901");
-                                if (d % 2 == 0) {
-                                    textView4.setText("major = 1234" + "\n" + "minor = 8901" + "\n" + "yaw = " + yaw[i]);//지혜
-                                } else if (d % 2 == 1) {
-                                    textView4_1.setText("yaw = " + yaw[i]);//지혜
-                                }
-                                d++;
-                                four = yaw[i]; //앞 첫 자리수를 저장
 
-                                rightFootValue = Integer.parseInt(four);
-                                /*오른발 범위 적용
-                                * four 변수 이용
-                                * */
-                                if (rightFootValue < 1000) {
-                                    rightFoot.setImageResource(R.drawable.rf111);
-                                } else if (rightFootValue < 1400) {
-                                    rightFoot.setImageResource(R.drawable.rf2);
-                                } else if (rightFootValue < 1800) {
-                                    rightFoot.setImageResource(R.drawable.rf3);
-                                } else {
-                                    rightFoot.setImageResource(R.drawable.rf4);
-                                }
-
-                            }
-                        }
-                    }
-                }));
 
 
         // Setup an observable on the bluetooth changes
@@ -423,7 +328,6 @@ public class SquartActivity extends AppCompatActivity implements BeaconConsumer,
             Observable.from(beacons)
                     .subscribe(b -> {
                         BeaconSaved beacon = new BeaconSaved();
-                        Log.d("update ","update 주기");
 
                         if (b.getServiceUuid() == 0xfeaa) { // This is an Eddystone beacon
 
@@ -431,27 +335,28 @@ public class SquartActivity extends AppCompatActivity implements BeaconConsumer,
                             beacon.setBeaconType(b.getBeaconTypeCode() == 0xbeac? BeaconSaved.TYPE_ALTBEACON : BeaconSaved.TYPE_IBEACON); // 0x4c000215 is iBeacon
                             beacon.setUUID(b.getId1().toString());
                             uuid_value=b.getId1().toString();//지혜
-
-                            yaw0=uuid_value.charAt(1);
-                            yaw100 = uuid_value.charAt(3);
-                            yaw10 = uuid_value.charAt(5);
-                            yaw1 = uuid_value.charAt(7);
+                            roll0=uuid_value.charAt(10);
+                            // yaw0=uuid_value.charAt(1);
+                            // yaw100 = uuid_value.charAt(3);
+                            // yaw10 = uuid_value.charAt(5);
+                            // yaw1 = uuid_value.charAt(7);
                             //지혜
-
-                            ///yaw 값이 ffe1이 아닐 때
-                            yaw[count]=yaw0 + "" + yaw100 + "" + yaw10 + "" + yaw1;
+                            Log.d("roll",uuid_value.charAt(10)+"");
+                            // yaw[count]=yaw0 + "" + yaw100 + "" + yaw10 + "" + yaw1;
+                            roll[count]=roll0+"";
                             beacon.setMajor(b.getId2().toString());
                             major[count]=b.getId2().toString();//지혜
                             beacon.setMinor(b.getId3().toString());
                             minor[count]=b.getId3().toString();//지혜
-
-                            /*Log.d("yaw",yaw[count]);
+                            Log.d("roll",roll[count]);
                             Log.d("major",major[count]);
-                            Log.d("minor",minor[count]);*/
+                            Log.d("minor",minor[count]);
                         }
+                        Log.d("update","ui");
                         tRealm.copyToRealmOrUpdate(beacon);
                         count++;
                     });
+            Log.d("check","bloothe");
             count=0;
         });
     }
@@ -483,7 +388,6 @@ public class SquartActivity extends AppCompatActivity implements BeaconConsumer,
                 break;
         }
     }
-
     public void bindBeaconManager() {
         if (EasyPermissions.hasPermissions(this, perms)) {
             beaconManager.bind(this);
