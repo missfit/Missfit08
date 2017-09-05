@@ -53,4 +53,5 @@
     <string name="feature_scan_content">Tap to start and stop scanning for nearby beacons!</string>
     <string name="feature_clear_title">Need a fresh start ?</string>
     <string name="feature_clear_content">Hit this to clear your previous scans</string>
+    <string name="title_activity_squart_setting">squartSetting</string>
 </resources>

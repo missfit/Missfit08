@@ -1,18 +1,10 @@
 [
     {
-        "merged": "C:\\Users\\JiHyeon\\Desktop\\Missfit08\\app\\build\\intermediates\\res\\merged\\debug\\color-v11\\abc_background_cache_hint_selector_material_light.xml",
-        "source": "C:\\Users\\JiHyeon\\.android\\build-cache\\46e7b7d22413892efeb0609ee704dccd52154ae0\\output\\res\\color-v11\\abc_background_cache_hint_selector_material_light.xml"
+        "merged": "C:\\Users\\jihyehan\\Desktop\\git\\Missfit08\\app\\build\\intermediates\\res\\merged\\debug\\color-v11\\abc_background_cache_hint_selector_material_dark.xml",
+        "source": "C:\\Users\\jihyehan\\.android\\build-cache\\d81a5d21110f47d367741c0850c72e69425d849b\\output\\res\\color-v11\\abc_background_cache_hint_selector_material_dark.xml"
     },
     {
-        "merged": "C:\\android0812\\app\\build\\intermediates\\res\\merged\\debug\\color-v11\\abc_background_cache_hint_selector_material_dark.xml",
-        "source": "C:\\Users\\eunju\\.android\\build-cache\\1c6d8b0653368fc0503aecb64305e7618bc815ee\\output\\res\\color-v11\\abc_background_cache_hint_selector_material_dark.xml"
-    },
-    {
-        "merged": "C:\\Users\\JiHyeon\\Desktop\\Missfit08\\app\\build\\intermediates\\res\\merged\\debug\\color-v11\\abc_background_cache_hint_selector_material_dark.xml",
-        "source": "C:\\Users\\JiHyeon\\.android\\build-cache\\46e7b7d22413892efeb0609ee704dccd52154ae0\\output\\res\\color-v11\\abc_background_cache_hint_selector_material_dark.xml"
-    },
-    {
-        "merged": "C:\\android0812\\app\\build\\intermediates\\res\\merged\\debug\\color-v11\\abc_background_cache_hint_selector_material_light.xml",
-        "source": "C:\\Users\\eunju\\.android\\build-cache\\1c6d8b0653368fc0503aecb64305e7618bc815ee\\output\\res\\color-v11\\abc_background_cache_hint_selector_material_light.xml"
+        "merged": "C:\\Users\\jihyehan\\Desktop\\git\\Missfit08\\app\\build\\intermediates\\res\\merged\\debug\\color-v11\\abc_background_cache_hint_selector_material_light.xml",
+        "source": "C:\\Users\\jihyehan\\.android\\build-cache\\d81a5d21110f47d367741c0850c72e69425d849b\\output\\res\\color-v11\\abc_background_cache_hint_selector_material_light.xml"
     }
 ]

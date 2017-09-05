@@ -2,14 +2,11 @@ package com.bridou_n.beaconscanner.features.beaconList;
 
 import android.Manifest;
 import android.bluetooth.BluetoothAdapter;
-import android.bluetooth.le.BluetoothLeScanner;
-import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-//import android.os.Handler;
+import android.os.Handler;
 import android.os.RemoteException;
-import android.os.SystemClock;
 import android.provider.Settings;
 import android.speech.tts.TextToSpeech;
 import android.support.design.widget.CoordinatorLayout;
@@ -18,18 +15,21 @@ import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.widget.ImageView;
+import android.widget.PopupWindow;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bridou_n.beaconscanner.AppSingleton;
 import com.bridou_n.beaconscanner.R;
@@ -37,22 +37,14 @@ import com.bridou_n.beaconscanner.events.Events;
 import com.bridou_n.beaconscanner.events.RxBus;
 import com.bridou_n.beaconscanner.models.BeaconSaved;
 import com.bridou_n.beaconscanner.utils.BluetoothManager;
-import com.bridou_n.beaconscanner.utils.DividerItemDecoration;
-import com.getkeepsafe.taptargetview.TapTarget;
-import com.getkeepsafe.taptargetview.TapTargetView;
 
 import org.altbeacon.beacon.Beacon;
 import org.altbeacon.beacon.BeaconConsumer;
 import org.altbeacon.beacon.BeaconManager;
 import org.altbeacon.beacon.Region;
-import org.altbeacon.beacon.utils.UrlBeaconUrlCompressor;
 
 import java.util.Collection;
-import java.util.Date;
 import java.util.List;
-import java.util.Timer;
-import java.util.TimerTask;
-
 
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -65,176 +57,272 @@ import io.realm.RealmResults;
 import io.realm.Sort;
 import pub.devrel.easypermissions.EasyPermissions;
 import rx.Observable;
-import rx.Subscription;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.subscriptions.CompositeSubscription;
 
-import android.speech.tts.TextToSpeech;
-
-import static com.bridou_n.beaconscanner.R.id.text;
-import static com.bridou_n.beaconscanner.R.id.textView1;
+//import android.os.Handler;
 
 
-public class MainActivity extends AppCompatActivity implements BeaconConsumer, EasyPermissions.PermissionCallbacks, TextToSpeech.OnInitListener
-{
-
+public class MainActivity extends AppCompatActivity implements BeaconConsumer, EasyPermissions.PermissionCallbacks, TextToSpeech.OnInitListener {
     protected static final String TAG = "MAIN_ACTIVITY";
     private static final String[] perms = {Manifest.permission.ACCESS_COARSE_LOCATION};
     private static final int RC_COARSE_LOCATION = 1;
     private static final int RC_SETTINGS_SCREEN = 2;
     private static final String PREF_TUTO_KEY = "PREF_TUTO_KEY";
     private static final String STATE_SCANNING = "scanState";
-    public static String distance_value="-1";//지혜
-    public static String uuid_value="-1" ;//지혜
-    public static String [] major={"-1","-1","-1","-1","-1","-1","-1","-1","-1","-1","-1","-1","-1","-1","-1","-1","-1","-1","-1","-1"};//지혜
-    public static String [] minor={"-1","-1","-1","-1","-1","-1","-1","-1","-1","-1","-1","-1","-1","-1","-1","-1","-1","-1","-1","-1"};//지혜
-    public static String [] yaw={"-1","-1","-1","-1","-1","-1","-1","-1","-1","-1","-1","-1","-1","-1","-1","-1","-1","-1","-1","-1"};//지혜
-    public static String [] roll={"-1","-1","-1","-1","-1","-1","-1","-1","-1","-1","-1","-1","-1","-1","-1","-1","-1","-1","-1","-1"};//지혜
-    public static char  yaw0; //지혜
-    public static char  yaw10; //지혜
-    public static char  yaw100; //지혜
-    public static char roll0;
+    public static String distance_value = "-1";//지혜
+    public static String major = "-1";//지혜
+    public static String minor = "-1";
+    public static String uuid_value = "-1";
+    public static String yaw = "-1";
+    public static String yaw5 = "noValue";
+    public static String yaw6 = "noValue";
+    public static String yaw7 = "noValue";
+    public static String yaw8 = "noValue";
+    public static char yaw0; //지혜
+    public static char yaw10; //지혜
+    public static char yaw100; //지혜
     public static char yaw1; //지혜
-    public static String one="0"; //은주//지혜(char-->string 변수형 변환)
-    public static String two="0";//은주 //지혜(char-->string 변수형 변환)
-    public static String three="0"; //지혜
-    public static String four="0";//지혜
-    public static int flag=-1;//지혜
-    public static int count=0;
-    public static int test=0;
-
-    TextToSpeech myTTS;
+    public static String one = "0"; //은주//지혜(char-->string 변수형 변환)
+    public static String two = "0";//은주 //지혜(char-->string 변수형 변환)
+    public static String three = "0"; //지혜
+    public static String four = "0";//지혜
+    public static int flag = -1;//지혜
+    public static int test = 0;
+    PopupWindow helpPopupWindow;
 
     private CompositeSubscription subs = new CompositeSubscription();
 
-    @Inject @Named("fab_search") Animation rotate;
-    @Inject BluetoothManager bluetooth;
-    @Inject BeaconManager beaconManager;
-    @Inject RxBus rxBus;
-    @Inject Realm realm;
+    @Inject
+    @Named("fab_search")
+    Animation rotate;
+    @Inject
+    BluetoothManager bluetooth;
+    @Inject
+    BeaconManager beaconManager;
+    @Inject
+    RxBus rxBus;
+    @Inject
+    Realm realm;
 
-    @BindView(R.id.toolbar) Toolbar toolbar;
-    @BindView(R.id.activity_main) CoordinatorLayout rootView;
-    @BindView(R.id.bluetooth_state) TextView bluetoothState;
+    @BindView(R.id.toolbar)
+    Toolbar toolbar;
+    @BindView(R.id.activity_main)
+    CoordinatorLayout rootView;
+    @BindView(R.id.bluetooth_state)
+    TextView bluetoothState;
 
-    @BindView(R.id.empty_view) RelativeLayout emptyView;
-    @BindView(R.id.beacons_rv) RecyclerView beaconsRv;
-    @BindView(R.id.scan_fab) FloatingActionButton scanFab;
-    @BindView(R.id.scan_progress) ProgressBar scanProgress;
-    @BindView(R.id.textView1) TextView textView1;
-    @BindView(R.id.textView2) TextView textView2;
-    @BindView(R.id.textView1_1) TextView textView1_1;
-    @BindView(R.id.textView2_1) TextView textView2_1;
+    @BindView(R.id.empty_view)
+    RelativeLayout emptyView;
+    //@BindView(R.id.beacons_rv) RecyclerView beaconsRv;
+    @BindView(R.id.scan_fab)
+    FloatingActionButton scanFab;
+    @BindView(R.id.scan_progress)
+    ProgressBar scanProgress;
+    @BindView(R.id.textView1)
+    TextView textView1;
+    @BindView(R.id.textView2)
+    TextView textView2;
+    @BindView(R.id.textView1_1)
+    TextView textView1_1;
+    @BindView(R.id.textView2_1)
+    TextView textView2_1;
+    @BindView(R.id.textView3)
+    TextView textView3;
+    @BindView(R.id.textView4)
+    TextView textView4;
+    @BindView(R.id.textView3_1)
+    TextView textView3_1;
+    @BindView(R.id.textView4_1)
+    TextView textView4_1;
 
-
+    @BindView(R.id.leftHand)
+    ImageView leftHand; //지혜
+    @BindView(R.id.rightHand)
+    ImageView rightHand; //지혜
+    @BindView(R.id.leftFoot)
+    ImageView leftFoot; //지혜
+    @BindView(R.id.rightFoot)
+    ImageView rightFoot; //지혜
 
     /*value*/
-    int leftHandValue ;
-    int preValue;
-    int state;
+    int leftHandValue;
     int rightHandValue;
     int leftFootValue;
     int rightFootValue;
-    int diff ;
-    int time=0;
+    Toast toast;
+
+    TextToSpeech myTTS;
+
+    int limitLeftHand = 0, limitRightHand = 0;
+    int limitLeftFoot = 0, limitRightFoot = 0;
+
+    private Handler handler = new Handler();
+    private Runnable runnable = new Runnable() {
+        public void run() {
+
+            textView1.setText("major = 1234" + "\n" + "minor = 5678" + "\n" + "yaw = " + yaw5);
+            textView2.setText("major = 1234" + "\n" + "minor = 6789" + "\n" + "yaw = " + yaw6);
+            textView3.setText("major = 1234" + "\n" + "minor = 7891" + "\n" + "yaw = " + yaw7);
+            textView4.setText("major = 1234" + "\n" + "minor = 8912" + "\n" + "yaw = " + yaw8);
+
+            if (yaw5 != "noValue") {
+                leftHandValue = Integer.parseInt(yaw5);
+            } else {
+                leftHandValue = 0;
+            }
+
+            if (yaw6 != "noValue") {
+                rightHandValue = Integer.parseInt(yaw6);
+            } else {
+                rightHandValue = 0;
+            }
+
+            if (yaw7 != "noValue") {
+                leftFootValue = Integer.parseInt(yaw7);
+            } else {
+                leftFootValue = 0;
+            }
+
+            if (yaw8 != "noValue") {
+                rightFootValue = Integer.parseInt(yaw8);
+            } else {
+                rightFootValue = 0;
+            }
+
+
+            if (leftHandValue < 1600) {
+                leftHand.setImageResource(R.drawable.bargraph0);
+            } else if (leftHandValue < 2800) {
+                leftHand.setImageResource(R.drawable.bargraph);
+            } else if (leftHandValue < 4000) {
+                leftHand.setImageResource(R.drawable.bargraph2);
+            } else {
+                leftHand.setImageResource(R.drawable.bargraph3);
+            }
+
+            if (rightHandValue < 1600) {
+                rightHand.setImageResource(R.drawable.bargraph0);
+            } else if (rightHandValue < 2800) {
+                rightHand.setImageResource(R.drawable.bargraph);
+            } else if (rightHandValue < 4000) {
+                rightHand.setImageResource(R.drawable.bargraph2);
+            } else {
+                rightHand.setImageResource(R.drawable.bargraph3);
+            }
+
+            if (leftFootValue < 1600) {
+                leftFoot.setImageResource(R.drawable.bargraph0);
+            } else if (leftFootValue < 2800) {
+                leftFoot.setImageResource(R.drawable.bargraph);
+            } else if (leftFootValue < 4000) {
+                leftFoot.setImageResource(R.drawable.bargraph2);
+            } else {
+                leftFoot.setImageResource(R.drawable.bargraph3);
+            }
+
+
+            if (rightFootValue < 1600) {
+                rightFoot.setImageResource(R.drawable.bargraph0);
+            } else if (rightFootValue < 2800) {
+                rightFoot.setImageResource(R.drawable.bargraph);
+            } else if (rightFootValue < 4000) {
+                rightFoot.setImageResource(R.drawable.bargraph2);
+            } else {
+                rightFoot.setImageResource(R.drawable.bargraph3);
+            }
+
+
+            if (leftHandValue > rightHandValue) {
+                if (leftHandValue - rightHandValue > 1500) {
+                    limitLeftHand++;
+                } else {
+                    limitLeftHand = 0;
+                }
+            } else {
+                if (rightHandValue - leftHandValue > 1500) {
+                    limitRightHand++;
+                } else {
+                    limitRightHand = 0;
+                }
+            }
+
+            if (leftFootValue > rightFootValue) {
+                if (leftFootValue - rightFootValue > 1500) {
+                    limitLeftFoot++;
+                } else {
+                    limitLeftFoot = 0;
+                }
+            } else {
+                if (rightFootValue - leftFootValue > 1500) {
+                    limitRightFoot++;
+                } else {
+                    limitRightFoot = 0;
+                }
+            }
+
+
+            if (leftHandValue != 0 && rightHandValue != 0) {
+                if (limitLeftHand > 5) {
+                    Toast.makeText(MainActivity.this, "LeftHand Is Fast", Toast.LENGTH_SHORT).show();
+                    myTTS.speak("왼손빠름", TextToSpeech.QUEUE_FLUSH, null);
+                    limitLeftHand = 0;
+                }
+                if (limitRightHand > 5) {
+                    Toast.makeText(MainActivity.this, "RightHand Is Fast", Toast.LENGTH_SHORT).show();
+                    myTTS.speak("오른손빠름", TextToSpeech.QUEUE_FLUSH, null);
+                    limitRightHand = 0;
+                }
+            }
+
+            if (leftFootValue != 0 && rightFootValue != 0) {
+                if (limitLeftFoot > 5) {
+                    Toast.makeText(MainActivity.this, "LeftFoot Is Fast", Toast.LENGTH_SHORT).show();
+                    myTTS.speak("왼발빠름", TextToSpeech.QUEUE_FLUSH, null);
+                    limitLeftFoot = 0;
+                }
+
+                if (limitRightFoot > 5) {
+                    Toast.makeText(MainActivity.this, "RightFoot Is Fast", Toast.LENGTH_SHORT).show();
+                    myTTS.speak("오른발빠름", TextToSpeech.QUEUE_FLUSH, null);
+                    limitRightFoot = 0;
+                }
+            }
+            handler.postDelayed(this, 500);
+        }
+    };
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
         AppSingleton.activityComponent().inject(this);
-        myTTS = new TextToSpeech(this,this);
+        myTTS = new TextToSpeech(this, this);
         setSupportActionBar(toolbar);
         toolbar.inflateMenu(R.menu.main_menu);
         myTTS.setSpeechRate(1);
+
         RealmResults<BeaconSaved> beaconResults = realm.where(BeaconSaved.class).findAllSortedAsync(new String[]{"lastMinuteSeen", "distance"}, new Sort[]{Sort.DESCENDING, Sort.ASCENDING});
 
-        beaconResults.addChangeListener(results -> {
-            if (results.size() == 0 && emptyView.getVisibility() != View.VISIBLE) {
-                beaconsRv.setVisibility(View.GONE);
-                emptyView.setVisibility(View.VISIBLE);
-            } else if (results.size() > 0 && beaconsRv.getVisibility() != View.VISIBLE) {
-                beaconsRv.setVisibility(View.VISIBLE);
-                emptyView.setVisibility(View.GONE);
-            }
-        });
 
-        beaconsRv.setHasFixedSize(true);
-        beaconsRv.setLayoutManager(new LinearLayoutManager(this));
-        beaconsRv.addItemDecoration(new DividerItemDecoration(this, null));
-        // beaconsRv.setAdapter(new BeaconsRecyclerViewAdapter(this, beaconResults, true));//지혜
-
-        // Set our event handler
-
-        subs.add(rxBus.toObserverable() //1
-                .observeOn(AndroidSchedulers.mainThread()) // We use this so we use the realm on the good thread & we can make UI changes
+        subs.add(rxBus.toObserverable() //
+                .observeOn(AndroidSchedulers.mainThread()) // We use this so we use the realm on the good thread & we can make UI change
                 .subscribe(e -> {
                     if (e instanceof Events.RangeBeacon) {
-                        Log.d("RxBus", "RxBus");
                         updateUiWithBeaconsArround(((Events.RangeBeacon) e).getBeacons());
-                        int a = 0;
+                    }
+                }, throwable -> Log.e("Error", throwable.getMessage())));
 
-                        //for (int i = 0; i < 10; i++) {
-                            Log.d("roll_i", roll[0]);
-                            Log.d("major_i", major[0]);
-                            Log.d("minor_i", minor[0]);
-                            if (major[0].equals("1234") && minor[0].equals("5678")) {
-                              //  if (a % 2 == 0) {
-                                    textView1.setText("major = 1234" + "\n" + "minor = 5678" + "\n" + "roll = " + roll[0]);//지혜
-                                //} else if (a % 2 == 1) {
-                                  //  textView1_1.setText("roll = " + roll[i]);//지혜
-                                //}
-                                a++;
-                                one = roll[0];
-                                Log.d("1234", "5678");
-                                leftHandValue = Integer.parseInt(one);
-                                /*왼손 범위 적용
-                                * one값 이용
-                                * */
+        runnable.run();
 
-                                if (leftHandValue ==0) {
-                                    myTTS.speak("UP", TextToSpeech.QUEUE_FLUSH, null);
-                                   // leftHand.setImageResource(R.drawable.lh11);
-                                } else if (leftHandValue ==1) {
-                                    myTTS.speak("유지", TextToSpeech.QUEUE_FLUSH, null);
-                                    //leftHand.setImageResource(R.drawable.lh22);
-                                } else if (leftHandValue ==2&&preValue==1) {
-                                    state=1;//올라가고 있는 상태
-                                    myTTS.speak("UP", TextToSpeech.QUEUE_FLUSH, null);
-                                    //leftHand.setImageResource(R.drawable.lh33);
-                                } else if (leftHandValue ==2&&preValue==3) {
-                                    state=0;//내려가고 있는 상태
-                                    myTTS.speak("DOWN", TextToSpeech.QUEUE_FLUSH, null);
-                                    //leftHand.setImageResource(R.drawable.lh33);
-                                }else if (leftHandValue ==2&&preValue==2&&state==1) {
-                                    //올라가고 있음
-                                    myTTS.speak("UP", TextToSpeech.QUEUE_FLUSH, null);
-                                    //leftHand.setImageResource(R.drawable.lh33);
-                                }else if (leftHandValue ==2&&preValue==2&&state==0) {
-                                    //내려가고가고 있음
-                                    myTTS.speak("DOWN", TextToSpeech.QUEUE_FLUSH, null);
-                                    //leftHand.setImageResource(R.drawable.lh33);
-                                }else if (leftHandValue ==3&&preValue==3) {
-                                    myTTS.speak("이제 다시 다운해라", TextToSpeech.QUEUE_FLUSH, null);
-                                    //leftHand.setImageResource(R.drawable.lh44);
-                                }else if (leftHandValue ==3) {
-                                    time++;
-                                    myTTS.speak("일어남"+time+"회", TextToSpeech.QUEUE_FLUSH, null);
-                                    //leftHand.setImageResource(R.drawable.lh44);
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
 
-                                }
-                                preValue=leftHandValue;
-                            }
-                        }
-                    //}
-     /*               for(int i=0;i<10;i++){
-                        yaw[i]="-1";
-                        major[i]="-1";
-                        minor[i]="-1";
-                    }*/
-                }));
-
-
+            }
+        });
 
         // Setup an observable on the bluetooth changes
         subs.add(bluetooth.observe()
@@ -247,70 +335,22 @@ public class MainActivity extends AppCompatActivity implements BeaconConsumer, E
         subs.add(bluetooth.observe()
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(e -> {
-                    if (!getPreferences(Context.MODE_PRIVATE).getBoolean(PREF_TUTO_KEY, false)) {
-                        showTutorial();
-                    }
-                }));
-
-        subs.add(bluetooth.observe()
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(e -> {
                     if (savedInstanceState != null && savedInstanceState.getBoolean(STATE_SCANNING)) {
                         startScan();
                     }
                 }));
-/*
-        if (!getPreferences(Context.MODE_PRIVATE).getBoolean(PREF_TUTO_KEY, false)) {
-            showTutorial();
-        }
-
-        if (savedInstanceState != null && savedInstanceState.getBoolean(STATE_SCANNING)) {
-            startScan();
-        }
-        */
     }
 
-    public void onInit(int status){
+    public void onInit(int status) {
         //  myTTS.speak("삐",TextToSpeech.QUEUE_FLUSH,null);
     }
 
-
-    public void showTutorial() {
-        AppCompatActivity _this = this;
-
-        TapTargetView.showFor(this,
-                TapTarget.forToolbarMenuItem(toolbar, R.id.action_bluetooth, getString(R.string.bluetooth_control), getString(R.string.feature_bluetooth_content)).cancelable(false).dimColor(R.color.primaryText).drawShadow(true),
-                new TapTargetView.Listener() {
-                    @Override
-                    public void onTargetClick(TapTargetView view) {
-                        super.onTargetClick(view);
-                        bluetooth.enable();
-                        TapTargetView.showFor(_this,
-                                TapTarget.forView(scanFab, getString(R.string.feature_scan_title), getString(R.string.feature_scan_content)).tintTarget(false).cancelable(false).dimColor(R.color.primaryText).drawShadow(true),
-                                new TapTargetView.Listener() {
-                                    @Override
-                                    public void onTargetClick(TapTargetView view) {
-                                        super.onTargetClick(view);
-                                        startStopScan(); // We start scanning for beacons
-                                        TapTargetView.showFor(_this,
-                                                TapTarget.forToolbarMenuItem(toolbar, R.id.action_clear, getString(R.string.feature_clear_title), getString(R.string.feature_clear_content)).cancelable(false).dimColor(R.color.primaryText).drawShadow(true),
-                                                new TapTargetView.Listener() {
-                                                    @Override
-                                                    public void onTargetClick(TapTargetView view) {
-                                                        super.onTargetClick(view);
-                                                        getPreferences(Context.MODE_PRIVATE).edit().putBoolean(PREF_TUTO_KEY, true).apply();
-                                                    }
-                                                });
-                                    }
-                                });
-                    }
-                });
-    }
 
     @Override
     protected void onResume() {
         super.onResume();
     }
+
     private void updateUiWithBeaconsArround(Collection<Beacon> beacons) {
         realm.executeTransactionAsync(tRealm -> {
             Observable.from(beacons)
@@ -318,37 +358,46 @@ public class MainActivity extends AppCompatActivity implements BeaconConsumer, E
                         BeaconSaved beacon = new BeaconSaved();
 
                         if (b.getServiceUuid() == 0xfeaa) { // This is an Eddystone beacon
-
                         } else { // This is an iBeacon or ALTBeacon
-                            beacon.setBeaconType(b.getBeaconTypeCode() == 0xbeac? BeaconSaved.TYPE_ALTBEACON : BeaconSaved.TYPE_IBEACON); // 0x4c000215 is iBeacon
+                            beacon.setBeaconType(b.getBeaconTypeCode() == 0xbeac ? BeaconSaved.TYPE_ALTBEACON : BeaconSaved.TYPE_IBEACON); // 0x4c000215 is iBeacon
                             beacon.setUUID(b.getId1().toString());
-                            uuid_value=b.getId1().toString();//지혜
-                            roll0=uuid_value.charAt(10);
-                            // yaw0=uuid_value.charAt(1);
-                            // yaw100 = uuid_value.charAt(3);
-                            // yaw10 = uuid_value.charAt(5);
-                            // yaw1 = uuid_value.charAt(7);
+                            uuid_value = b.getId1().toString();//지혜
+
+                            yaw0 = uuid_value.charAt(1);
+                            yaw100 = uuid_value.charAt(3);
+                            yaw10 = uuid_value.charAt(5);
+                            yaw1 = uuid_value.charAt(7);
                             //지혜
-                            Log.d("roll",uuid_value.charAt(10)+"");
-                            // yaw[count]=yaw0 + "" + yaw100 + "" + yaw10 + "" + yaw1;
-                            roll[count]=roll0+"";
+                            yaw = yaw0 + "" + yaw100 + "" + yaw10 + "" + yaw1;
+
                             beacon.setMajor(b.getId2().toString());
-                            major[count]=b.getId2().toString();//지혜
+                            major = b.getId2().toString();//지혜
                             beacon.setMinor(b.getId3().toString());
-                            minor[count]=b.getId3().toString();//지혜
-                            Log.d("roll",roll[count]);
-                            Log.d("major",major[count]);
-                            Log.d("minor",minor[count]);
+                            minor = b.getId3().toString();//지혜
+
+                            switch (minor) {
+                                case "5678":
+                                    yaw5 = yaw;
+                                    break;
+                                case "6789":
+                                    yaw6 = yaw;
+                                    break;
+                                case "7891":
+                                    yaw7 = yaw;
+                                    break;
+                                case "8912":
+                                    yaw8 = yaw;
+                                    break;
+                            }
+
+                            Log.d("update ", "minor     " + minor + "             value      " + yaw);
                         }
-                        Log.d("update","ui");
                         tRealm.copyToRealmOrUpdate(beacon);
-                        count++;
                     });
-            Log.d("check","bloothe");
-            count=0;
         });
     }
 
+    ///check if this works
     private void bluetoothStateChanged(int state) {
         bluetoothState.setVisibility(View.VISIBLE);
         switch (state) {
@@ -376,6 +425,7 @@ public class MainActivity extends AppCompatActivity implements BeaconConsumer, E
                 break;
         }
     }
+
     public void bindBeaconManager() {
         if (EasyPermissions.hasPermissions(this, perms)) {
             beaconManager.bind(this);
@@ -389,7 +439,7 @@ public class MainActivity extends AppCompatActivity implements BeaconConsumer, E
         if (!beaconManager.isBound(this)) {
             if (!bluetooth.isEnabled()) {
                 Snackbar.make(rootView, getString(R.string.enable_bluetooth_to_start_scanning), Snackbar.LENGTH_LONG).show();
-                return ;
+                return;
             }
             startScan();
         } else {
@@ -443,7 +493,7 @@ public class MainActivity extends AppCompatActivity implements BeaconConsumer, E
 
     public void showPermissionSnackbar() {
         final Snackbar snackBar = Snackbar.make(rootView, getString(R.string.enable_permission_from_settings), Snackbar.LENGTH_INDEFINITE);
-        snackBar.setAction(getString(R.string.enable),v -> {
+        snackBar.setAction(getString(R.string.enable), v -> {
             snackBar.dismiss();
             Intent intent = new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS, Uri.parse("package:" + getPackageName()));
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_NO_HISTORY | Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS);
@@ -467,6 +517,7 @@ public class MainActivity extends AppCompatActivity implements BeaconConsumer, E
         return true;
     }
 
+    int popupFlag =0;
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
@@ -479,7 +530,36 @@ public class MainActivity extends AppCompatActivity implements BeaconConsumer, E
                 tRealm.where(BeaconSaved.class).findAll().deleteAllFromRealm();
             });
         }
+        if (id == R.id.action_help) {
+            if(popupFlag==0) {
+                showHelpPopup();
+                popupFlag=1;
+            }else{
+                dismissPopupWindow();
+                popupFlag=0;
+            }
+        }
         return super.onOptionsItemSelected(item);
+    }
+
+
+    public void showHelpPopup(){
+
+        LayoutInflater inflater = (LayoutInflater)this.getSystemService(this.LAYOUT_INFLATER_SERVICE);
+        View helpLayout = inflater.inflate(R.layout.help_ropeskipping, null);
+
+        PopupWindow helpPopupWindow = new PopupWindow(helpLayout, WindowManager.LayoutParams.MATCH_PARENT, 500, false);
+        helpPopupWindow.setOutsideTouchable(false);
+        helpPopupWindow.showAtLocation(helpLayout, Gravity.CENTER, 50, 50);
+        setPopupWindow(helpPopupWindow);
+    }
+
+    public void setPopupWindow(PopupWindow helpPopupWindow){
+        this.helpPopupWindow = helpPopupWindow;
+    }
+
+    public void dismissPopupWindow(){
+        helpPopupWindow.dismiss();
     }
 
     @Override
@@ -498,7 +578,9 @@ public class MainActivity extends AppCompatActivity implements BeaconConsumer, E
         }
         realm.close();
         myTTS.shutdown();
+        if (toast != null) {
+            toast.cancel();
+        }
 
     }
 }
-

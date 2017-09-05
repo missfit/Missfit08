@@ -40,8 +40,11 @@
         <activity android:name="com.bridou_n.beaconscanner.features.beaconList.choice" />
         <activity android:name="com.bridou_n.beaconscanner.features.beaconList.squatvideo" />
         <activity android:name="com.bridou_n.beaconscanner.features.beaconList.lungevideo" />
-        <activity android:name="com.bridou_n.beaconscanner.features.beaconList.ropevideo" >
-        </activity>
+        <activity android:name="com.bridou_n.beaconscanner.features.beaconList.ropevideo" />
+        <activity
+            android:name="com.bridou_n.beaconscanner.features.beaconList.squartSetting"
+            android:label="@string/title_activity_squart_setting"
+            android:theme="@style/AppTheme" />
 
         <receiver android:name="org.altbeacon.beacon.startup.StartupBroadcastReceiver" >
             <intent-filter>
